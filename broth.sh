@@ -1,14 +1,24 @@
 #!/bin/sh
 #broth.sh - the base of all soups
 
-if [ -d .svn ]; then
-    echo "don't run me from SVN! export me somewhere else"
-    exit
+BUILD_DIRECTORY="~/puredyne-build"
+
+
+#if [ -d .svn ]; then
+#    echo "don't run me from SVN! export me somewhere else"
+#    exit
+#fi
+
+if [ ! -d $BUILD_DIRECTORY ]; then
+    mkdir -p $BUILD_DIRECTORY
+else
+    cd $BUILD_DIRECTORY
+    lh clean
 fi
 
 
 
-echo "broth - the mother of all soups"
+cd $BUILD_DIRECTORY
 
 lh config \
     --mirror-bootstrap "" \
