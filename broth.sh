@@ -10,6 +10,15 @@ BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
 #    exit
 #fi
 
+# live builder specific settings
+serverconf() {
+    if [ `cat /etc/hostname` == "livebuilder.goto10.org" ]; then
+        echo "live"
+    else
+        echo "nonlive"
+    fi
+}
+
 brothconfig() {
 lh config \
     --mirror-bootstrap "" \
@@ -21,9 +30,11 @@ lh config \
 
 if [ ! -d $BUILD_DIRECTORY ]; then
     mkdir -p $BUILD_DIRECTORY
+    serverconf
     brothconfig
 else
     cd $BUILD_DIRECTORY
+    serverconf
     lh clean
     brothconfig
 fi
