@@ -41,7 +41,6 @@ _COLOR="enabled" lh config \
     --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
     --language "en" \
     --linux-flavours "686" \
-    --linux-packages $KERNEL_PACKAGES \
     --packages-lists $PUREDYNE_PACKAGES \
     --architecture "i386" \
     --distribution "lenny" \
@@ -58,6 +57,11 @@ stock() {
     sudo cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
 }
 
+broken_config() {
+    echo "_DEBUG=\"enabled\"" >> $BUILD_DIRECTORY/config/common
+    echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
+    echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
+}
 
 if [ ! -d $BUILD_DIRECTORY ]; then
     mkdir -p $BUILD_DIRECTORY
@@ -65,13 +69,15 @@ if [ ! -d $BUILD_DIRECTORY ]; then
     serverconf
     brothconfig
     stock
-    sudo lh_build
+    broken_config
+    sudo lh_build | tee broth.log
 else
     cd $BUILD_DIRECTORY
     serverconf
     sudo lh clean
     brothconfig
     stock
-    sudo lh_build
+    broken_config
+    sudo lh_build | tee broth.log
 fi
 
