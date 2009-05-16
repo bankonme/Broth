@@ -2,6 +2,6 @@
 deb http://debian-multimedia.fx-services.com/ lenny main
 deb-src http://debian-multimedia.fx-services.com/ lenny main
 
-deb http://debian-multimedia.fx-services.com/ testing main
-deb-src http://debian-multimedia.fx-services.com/ testing main
+#deb http://debian-multimedia.fx-services.com/ testing main
+#deb-src http://debian-multimedia.fx-services.com/ testing main
 

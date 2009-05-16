@@ -1,4 +1,4 @@
 # Debian Testing
-deb http://mirror.ox.ac.uk/debian/ testing main contrib non-free
-deb-src http://mirror.ox.ac.uk/debian/ testing main contrib non-free
+#deb http://mirror.ox.ac.uk/debian/ testing main contrib non-free
+#deb-src http://mirror.ox.ac.uk/debian/ testing main contrib non-free
 
