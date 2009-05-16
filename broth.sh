@@ -11,13 +11,15 @@ KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure
 # live builder specific settings
 serverconf() {
     if [ `cat /etc/hostname` == "livebuilder.goto10.org" ]; then
-        echo "live"
+        echo "livebuilder mode"
         BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
         --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
         --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
     else
-        echo "nonlive"
-        BUILD_MIRRORS=""
+        echo "localhost mode"
+        BUILD_MIRRORS="--mirror-bootstrap \"http://mirror.ox.ac.uk/debian/\" \
+        --mirror-chroot \"http://mirror.ox.ac.uk/debian/\" \
+        --mirror-chroot-security \"http://security.debian.org/\""
     fi
 }
 
@@ -38,13 +40,11 @@ _COLOR="enabled" lh config \
     --syslinux-timeout "10" \
     --syslinux-menu "enabled" \
     --username "lintian" \
-    --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
     --language "en" \
     --linux-flavours "686" \
     --packages-lists $PUREDYNE_PACKAGES \
     --architecture "i386" \
     --distribution "lenny" \
-    --categories "main contrib non-free" \
     --apt "aptitude" \
     --apt-recommends "disabled" \
     --apt-secure "disabled" \
@@ -61,6 +61,8 @@ broken_config() {
     echo "_DEBUG=\"enabled\"" >> $BUILD_DIRECTORY/config/common
     echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
     echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
+    echo "LH_CATEGORIES=\"main contrib non-free\"" >> $BUILD_DIRECTORY/config/bootstrap
+    echo "LH_KEYRING_PACKAGES=\"debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring\"" >> $BUILD_DIRECTORY/config/chroot
 }
 
 if [ ! -d $BUILD_DIRECTORY ]; then
