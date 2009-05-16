@@ -16,6 +16,9 @@ KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure
 serverconf() {
     if [ `cat /etc/hostname` == "livebuilder.goto10.org" ]; then
         echo "live"
+        PUREDYNE_MIRROR_BOOTSTRAP="http://10.80.80.20:3142/mirror.ox.ac.uk/debian/"
+        PUREDYNE_MIRROR_CHROOT="http://10.80.80.20:3142/mirror.ox.ac.uk/debian/"
+        PUREDYNE_MIRROR_CHROOT_SECURITY="http://10.80.80.20:3142/security.debian.org/"
     else
         echo "nonlive"
     fi
@@ -23,8 +26,11 @@ serverconf() {
 
 brothconfig() {
 lh config \
-    --mirror-bootstrap "" \
-    --mirror-chroot "" \
+    --mirror-bootstrap $PUREDYNE_MIRROR_BOOTSTRAP \
+    --mirror-chroot $PUREDYNE_MIRROR_CHROOT \
+    --mirror-chroot-security $PUREDYNE_MIRROR_CHROOT_SECURITY \
+    --mirror-binary "http://mirror.ox.ac.uk/debian/" \
+    --mirror-binary-security "http://security.debian.org/" \
     --binary-indices disabled \
     --bootappend-live "persistent" \
     --debian-installer-distribution "lenny" \
@@ -41,7 +47,10 @@ lh config \
     --language "en" \
     --linux-flavours "686" \
     --linux-packages $KERNEL_PACKAGES \
-    --packages-lists $PUREDYNE_PACKAGES
+    --packages-lists $PUREDYNE_PACKAGES \
+    --architecture "i386" \
+    --distribution "lenny" \
+    --categories "main contrib non-free"
 }
 
 
