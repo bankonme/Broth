@@ -71,11 +71,13 @@ if [ ! -d $BUILD_DIRECTORY ]; then
     serverconf
     brothconfig
     stock
+    lh_build
 else
     cd $BUILD_DIRECTORY
     serverconf
     lh clean
     brothconfig
     stock
+    lh_build
 fi
 
