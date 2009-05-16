@@ -4,6 +4,8 @@
 BUILDER=`whoami`
 BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
 PUREDYNE_VERSION="pure:dyne carrot&coriander"
+PUREDYNE_PACKAGES="puredyne-CD"
+KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure linux-uvc-modules-2.6.24.7-rt21-pure alsa-modules-2.6.24.7-rt21-pure atl2-modules-2.6.24.7-rt21-pure"
 
 #if [ -d .svn ]; then
 #    echo "don't run me from SVN! export me somewhere else"
@@ -35,6 +37,11 @@ lh config \
     --syslinux-timeout "10" \
     --syslinux-menu "enabled" \
     --username "lintian"
+    --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
+    --language "en" \
+    --linux-flavours "686" \
+    --linux-packages $KERNEL_PACKAGES \
+    --packages-lists $PUREDYNE_PACKAGES
 }
 
 
