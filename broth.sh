@@ -54,8 +54,7 @@ _COLOR="enabled" lh config \
     --apt "aptitude" \
     --apt-recommends "disabled" \
     --apt-secure "disabled" \
-    --verbose \
-    --debug
+    --verbose
 #    --aptitude-options "--assume-yes"
 #    --apt-options "--yes --force-yes"
 }
