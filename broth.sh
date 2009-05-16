@@ -37,7 +37,7 @@ lh config \
     --hostname "puredyne" \
     --iso-application "pure:dyne team" \
     --iso-preparer "live-helper $VERSION" \
-    --iso-publisher "pure:dyne team; http://puredyne.goto10.org; puredyne-team@goto10.org"
+    --iso-publisher "pure:dyne team; http://puredyne.goto10.org; puredyne-team@goto10.org" \
     --iso-volume $PUREDYNE_VERSION \
     --syslinux-splash "splash.rle" \
     --syslinux-timeout "10" \
@@ -50,9 +50,14 @@ lh config \
     --packages-lists $PUREDYNE_PACKAGES \
     --architecture "i386" \
     --distribution "lenny" \
-    --categories "main contrib non-free"
+    --categories "main contrib non-free" \
+    --apt "aptitude" \
+    --apt-recommends "disabled" \
+    --apt-secure "disabled" \
+    --color "true" \
+    --apt-options "--yes --force-yes" \
+    --aptitude-options "--assume-yes"
 }
-
 
 
 if [ ! -d $BUILD_DIRECTORY ]; then
