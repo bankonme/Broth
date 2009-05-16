@@ -3,6 +3,7 @@
 
 BUILDER=`whoami`
 BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
+BROTH_DIRECTORY=`pwd`
 PUREDYNE_VERSION="pure:dyne carrot&coriander"
 PUREDYNE_PACKAGES="puredyne-CD"
 KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure linux-uvc-modules-2.6.24.7-rt21-pure alsa-modules-2.6.24.7-rt21-pure atl2-modules-2.6.24.7-rt21-pure"
@@ -60,7 +61,7 @@ lh config \
 }
 
 stock() {
-    cp -r stock/* $BUILD_DIRECTORY
+    cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY
 }
 
 
