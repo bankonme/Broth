@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #broth.sh - the base of all soups
 
 BUILDER=`whoami`
@@ -6,7 +6,7 @@ BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
 BROTH_DIRECTORY=`pwd`
 PUREDYNE_VERSION="pure:dyne carrot&coriander"
 PUREDYNE_PACKAGES="puredyne-CD"
-KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure linux-uvc-modules-2.6.24.7-rt21-pure alsa-modules-2.6.24.7-rt21-pure atl2-modules-2.6.24.7-rt21-pure"
+PUREDYNE_LINUX="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure linux-uvc-modules-2.6.24.7-rt21-pure alsa-modules-2.6.24.7-rt21-pure atl2-modules-2.6.24.7-rt21-pure"
 
 # live builder specific settings
 serverconf() {
@@ -24,7 +24,7 @@ serverconf() {
 }
 
 brothconfig() {
-_COLOR="enabled" lh config \
+lh_config \
     $BUILD_MIRRORS \
     --mirror-binary "http://mirror.ox.ac.uk/debian/" \
     --mirror-binary-security "http://security.debian.org/" \
@@ -42,15 +42,15 @@ _COLOR="enabled" lh config \
     --username "lintian" \
     --language "en" \
     --linux-flavours "686" \
+    --linux-packages $PUREDYNE_LINUX \
     --packages-lists $PUREDYNE_PACKAGES \
+    --categories "main non-free contrib" \
+    --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
     --architecture "i386" \
     --distribution "lenny" \
     --apt "aptitude" \
     --apt-recommends "disabled" \
-    --apt-secure "disabled" \
-    --verbose
-#    --aptitude-options "--assume-yes"
-#    --apt-options "--yes --force-yes"
+    --apt-secure "disabled"
 }
 
 stock() {
@@ -58,11 +58,10 @@ stock() {
 }
 
 broken_config() {
+# The following arguments are not accepted by lh_config ATM
     echo "_DEBUG=\"enabled\"" >> $BUILD_DIRECTORY/config/common
     echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
     echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
-    echo "LH_CATEGORIES=\"main contrib non-free\"" >> $BUILD_DIRECTORY/config/bootstrap
-    echo "LH_KEYRING_PACKAGES=\"debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring\"" >> $BUILD_DIRECTORY/config/chroot
 }
 
 if [ ! -d $BUILD_DIRECTORY ]; then
