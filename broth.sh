@@ -59,16 +59,22 @@ lh config \
     --aptitude-options "--assume-yes"
 }
 
+stock() {
+    cp -r stock/* $BUILD_DIRECTORY
+}
+
 
 if [ ! -d $BUILD_DIRECTORY ]; then
     mkdir -p $BUILD_DIRECTORY
     cd $BUILD_DIRECTORY
     serverconf
     brothconfig
+    stock
 else
     cd $BUILD_DIRECTORY
     serverconf
     lh clean
     brothconfig
+    stock
 fi
 
