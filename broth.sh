@@ -61,7 +61,7 @@ _COLOR="enabled" lh config \
 }
 
 stock() {
-    sudo cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY
+    sudo cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
 }
 
 
