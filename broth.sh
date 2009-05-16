@@ -61,7 +61,7 @@ lh config \
 }
 
 stock() {
-    cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY
+    sudo cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY
 }
 
 
@@ -75,7 +75,7 @@ if [ ! -d $BUILD_DIRECTORY ]; then
 else
     cd $BUILD_DIRECTORY
     serverconf
-    lh clean
+    sudo lh clean
     brothconfig
     stock
     sudo lh_build
