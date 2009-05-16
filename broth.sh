@@ -30,6 +30,7 @@ lh config \
 
 if [ ! -d $BUILD_DIRECTORY ]; then
     mkdir -p $BUILD_DIRECTORY
+    cd $BUILD_DIRECTORY
     serverconf
     brothconfig
 else
