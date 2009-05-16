@@ -17,19 +17,18 @@ KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure
 serverconf() {
     if [ `cat /etc/hostname` == "livebuilder.goto10.org" ]; then
         echo "live"
-        PUREDYNE_MIRROR_BOOTSTRAP="http://10.80.80.20:3142/mirror.ox.ac.uk/debian/"
-        PUREDYNE_MIRROR_CHROOT="http://10.80.80.20:3142/mirror.ox.ac.uk/debian/"
-        PUREDYNE_MIRROR_CHROOT_SECURITY="http://10.80.80.20:3142/security.debian.org/"
+        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
+        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
+        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
     else
         echo "nonlive"
+        BUILD_MIRRORS=""
     fi
 }
 
 brothconfig() {
-lh config \
-    --mirror-bootstrap $PUREDYNE_MIRROR_BOOTSTRAP \
-    --mirror-chroot $PUREDYNE_MIRROR_CHROOT \
-    --mirror-chroot-security $PUREDYNE_MIRROR_CHROOT_SECURITY \
+_COLOR="enabled" lh config \
+    $BUILD_MIRRORS \
     --mirror-binary "http://mirror.ox.ac.uk/debian/" \
     --mirror-binary-security "http://security.debian.org/" \
     --binary-indices disabled \
@@ -55,9 +54,10 @@ lh config \
     --apt "aptitude" \
     --apt-recommends "disabled" \
     --apt-secure "disabled" \
-    --color "true" \
-    --apt-options "--yes --force-yes" \
-    --aptitude-options "--assume-yes"
+    --verbose \
+    --debug
+#    --aptitude-options "--assume-yes"
+#    --apt-options "--yes --force-yes"
 }
 
 stock() {
