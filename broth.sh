@@ -8,11 +8,6 @@ PUREDYNE_VERSION="pure:dyne carrot&coriander"
 PUREDYNE_PACKAGES="puredyne-CD"
 KERNEL_PACKAGES="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure linux-uvc-modules-2.6.24.7-rt21-pure alsa-modules-2.6.24.7-rt21-pure atl2-modules-2.6.24.7-rt21-pure"
 
-#if [ -d .svn ]; then
-#    echo "don't run me from SVN! export me somewhere else"
-#    exit
-#fi
-
 # live builder specific settings
 serverconf() {
     if [ `cat /etc/hostname` == "livebuilder.goto10.org" ]; then
