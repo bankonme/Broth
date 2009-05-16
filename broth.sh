@@ -42,7 +42,7 @@ lh config \
     --syslinux-splash "binary_syslinux/splash.rle" \
     --syslinux-timeout "10" \
     --syslinux-menu "enabled" \
-    --username "lintian"
+    --username "lintian" \
     --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
     --language "en" \
     --linux-flavours "686" \
