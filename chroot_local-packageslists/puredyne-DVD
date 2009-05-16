@@ -1,0 +1,6 @@
+#include <puredyne-CD>
+#include <audio-extra>
+#include <desktop-extra>
+#include <dev-extra>
+#include <graphics-extra>
+#include <video-extra>

@@ -1,0 +1,8 @@
+# firmware packages
+
+alsa-firmware
+firmware-iwlwifi
+
+# EZ-USB related
+fxload
+midisport-firmware

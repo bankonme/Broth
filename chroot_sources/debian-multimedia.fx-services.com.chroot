@@ -1,0 +1,7 @@
+# Debian Multimedia
+deb http://10.80.80.20:3142/debian-multimedia.fx-services.com/ lenny main
+deb-src http://10.80.80.20:3142/debian-multimedia.fx-services.com/ lenny main
+
+deb http://10.80.80.20:3142/debian-multimedia.fx-services.com/ testing main
+deb-src http://10.80.80.20:3142/debian-multimedia.fx-services.com/ testing main
+

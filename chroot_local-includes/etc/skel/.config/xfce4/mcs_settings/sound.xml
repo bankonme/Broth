@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mcs-option SYSTEM "mcs-option.dtd">
+
+<mcs-option>
+	<option name="Sound/Mixer/DefaultDevice" type="string" value="default"/>
+	<option name="Sound/Mixer/Useful:default" type="string" value="@"/>
+</mcs-option>

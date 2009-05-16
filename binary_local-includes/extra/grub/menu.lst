@@ -1,0 +1,22 @@
+# pure:dyne generic grub menu.lst options
+# RTFM -> http://code.goto10.org/projects/puredyne/wiki/liveHDInstall
+# RTFM -> http://www.gnu.org/software/grub/manual/
+#
+# take care to adapt the following with your partitions!
+# if you are confused about all this: DON'T DO IT!
+# Ask someone for some help/advice :)
+
+default 0
+timeout 15
+
+# Entry for pure:dyne
+title pure:dyne
+root (hd0,0) # this is hda1, hda2 is (hd0,1), sdb3 is (hd1,2), etc..
+kernel /live/vmlinuz1 ramdisk_size=100000 boot=live persistent username=lintian hostname=puredyne vga=791
+initrd /live/initrd1.img
+
+
+# Entry for Windblows
+title Windblows
+rootnoverify (hd0,0)
+chainloader +1

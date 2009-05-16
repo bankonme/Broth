@@ -1,0 +1,10 @@
+# package list for developer tools
+
+# compilation
+make
+gcc-4.2
+
+subversion
+
+# emacs stuff
+emacs-goodies-el

@@ -1,0 +1,24 @@
+# Extra packages for non-CD live releases
+
+# JACK
+meterbridge
+patchage
+jackeq
+freqtweak
+
+# ecasound
+ecamegapedal
+
+# Hydrogen
+hydrogen-drumkits
+
+# MIDI
+timidity
+rosegarden
+
+# Sampling
+linuxsampler
+qsampler
+
+# CDrip
+icedax

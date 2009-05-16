@@ -1,0 +1,23 @@
+# 3D, Vector and Raster application
+
+# 3D
+#blender
+#yafray
+
+# digital photo
+ufraw
+rawstudio
+
+# Gimp related
+gimp
+gimp-ufraw
+
+inkscape
+
+graphviz
+
+# RT
+fluxus
+
+# need Java so it's installed in the hook
+#puredyne-processing

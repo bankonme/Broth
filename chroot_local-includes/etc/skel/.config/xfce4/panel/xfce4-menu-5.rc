@@ -1,0 +1,7 @@
+use_default_menu=true
+menu_file=/home/lintian/.config/xfce4/desktop/menu.xml
+icon_file=/home/lintian/.icons/puredyne-icon.png
+show_menu_icons=true
+button_title=Xfce Menu
+show_button_title=false
+

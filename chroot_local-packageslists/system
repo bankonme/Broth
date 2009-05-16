@@ -1,0 +1,36 @@
+# system stuff
+
+# keys (not needed before, needs to investigate)
+debian-multimedia-keyring
+debian-puredyne-keyring
+
+acpid
+acpi-support
+
+ssh
+rsync
+screen
+less
+
+fam
+
+powertop
+
+reiserfsprogs
+ntfsprogs
+dosfstools
+parted
+gparted
+
+ntfs-3g
+sysfsutils
+
+dvd+rw-tools
+
+module-assistant
+
+lilo
+syslinux
+grub
+
+bzip2

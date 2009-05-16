@@ -1,0 +1,17 @@
+[General]
+AutoSave=false
+PromptOnLogout=true
+DisableTcp=true
+SessionName=Default
+SaveOnExit=false
+
+[Compatibility]
+LaunchGnome=true
+LaunchKDE=false
+
+[Chooser]
+AlwaysDisplay=false
+
+[Splash Screen]
+Engine=mice
+

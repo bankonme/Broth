@@ -1,0 +1,23 @@
+# for the liveDVD
+hugin
+#ufraw
+#gimp-ufraw
+#rawstudio
+
+synfigstudio
+
+# Publishing
+scribus-ng
+fontforge
+
+# 3D
+blender
+yafray
+blender-ogrexml
+wings3d
+
+# Ogre
+ogre-doc
+ogre-doc-nonfree
+ogre-plugins-cgprogrammanager
+ogre-tools

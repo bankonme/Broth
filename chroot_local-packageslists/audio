@@ -1,0 +1,84 @@
+# audio app
+
+# Audio stuff
+alsa-base
+alsa-utils
+alsa-tools-gui
+libasound2-plugins
+
+# JACK stuff
+jackd
+qjackctl
+jackbytes
+gjacktransport
+jack-rack
+jack-tools
+
+# Pd
+puredyne-puredata
+# to be removed - see #609 
+pd-pix-opencv 
+
+# Supercollider
+# Reminder: sc is installed with a hook. see #534
+#puredyne-supercollider
+
+# ladspa
+csladspa
+vco-plugins
+tap-plugins
+swh-plugins
+rev-plugins
+omins
+mcp-plugins
+ladspa-sdk
+cmt
+caps
+blop
+blepvco
+amb-plugins
+
+# lv2
+mda-lv2-plugins
+swh-lv2-plugins
+
+# dssi
+wsynth-dssi
+xsynth-dssi
+
+# ecasound
+ecasound
+
+#csound
+csound
+csound-utils
+tclcsound
+csound-gui
+python-csound
+python-csoundac
+libcsoundac5.1
+#csound-doc
+mmm-mode
+csoundx
+
+# ardour
+ardour-i686
+
+# MIDI Stuff
+seq24
+
+# Misc / To be sorted
+milkytracker=0.90.80-2
+mx44
+chuck
+audacity
+jamin
+kluppe
+zynaddsubfx
+hydrogen
+amsynth
+hexter
+abcm2ps
+mixxx
+timemachine
+flac

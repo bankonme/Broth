@@ -1,0 +1,4 @@
+# Debian Unstable
+deb http://10.80.80.20:3142/mirror.ox.ac.uk/debian/ testing main contrib non-free
+deb-src http://10.80.80.20:3142/mirror.ox.ac.uk/debian/ testing main contrib non-free
+

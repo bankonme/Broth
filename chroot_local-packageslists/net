@@ -1,0 +1,21 @@
+# net app
+
+wireless-tools
+pppoeconf
+
+xchat
+irssi
+
+lftp
+
+# Browsers and plugins
+links2
+mozilla-plugin-gnash
+mozilla-mplayer
+
+# Connectivity
+network-manager
+network-manager-gnome
+
+# Network Share
+nfs-common
