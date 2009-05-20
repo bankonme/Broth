@@ -5,7 +5,7 @@ BUILDER=`whoami`
 BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
 BROTH_DIRECTORY=`pwd`
 PUREDYNE_PACKAGES="puredyne-CD"
-PUREDYNE_LINUX="linux-image-2.6.24.7-rt21-pure linux-headers-2.6.24.7-rt21-pure linux-uvc-modules-2.6.24.7-rt21-pure alsa-modules-2.6.24.7-rt21-pure atl2-modules-2.6.24.7-rt21-pure"
+PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure-686 linux-headers-2.6.29.3-rt14-pure-686"
 
 # live builder specific settings
 serverconf() {
