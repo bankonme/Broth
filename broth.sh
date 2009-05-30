@@ -1,23 +1,26 @@
-#!/bin/bash
+#!/bin/bash -e
 # broth.sh - the base of all soups
+# Note: bash -e == exits on errors
 
+# global variables
 BUILDER=`whoami`
-BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
 BROTH_DIRECTORY=`pwd`
 PUREDYNE_PACKAGES="puredyne-CD"
 PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure-686 linux-headers-2.6.29.3-rt14-pure-686"
 
 # live builder specific settings
 serverconf() {
-    if [ `cat /etc/hostname` == "livebuilder.goto10.org" ]; then
-        echo "livebuilder mode"
+    if [ `cat /etc/hostname` == "builder" ]; then
+        echo "bob the builder mode"
         PUREDYNE_VERSION="pure:dyne carrot&coriander"
-        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
-        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
-        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
+        BUILD_DIRECTORY="/goto/puredyne-build"
+#        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
+#        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
+#        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
     else
-        echo "localhost mode"
+        echo "remix/test mode"
         PUREDYNE_VERSION="pure:dyne remix"
+        BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
         BUILD_MIRRORS="--mirror-bootstrap \"http://mirror.ox.ac.uk/debian/\" \
         --mirror-chroot \"http://mirror.ox.ac.uk/debian/\" \
         --mirror-chroot-security \"http://security.debian.org/\""
@@ -66,13 +69,12 @@ broken_config() {
 }
 
 make_soup() {
+    serverconf
     if [ ! -d $BUILD_DIRECTORY ]; then
         mkdir -p $BUILD_DIRECTORY
-        cd $BUILD_DIRECTORY
-        serverconf
+	cd $BUILD_DIRECTORY
     else
         cd $BUILD_DIRECTORY
-        serverconf
         sudo lh clean
     fi
     brothconfig
