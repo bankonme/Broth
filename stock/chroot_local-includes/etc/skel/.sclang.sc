@@ -10,6 +10,10 @@ Score.program = Server.program;
 	s.options.numOutputBusChannels = 2; // set the number of input jack ports
 	s.options.memSize = 1024 * 54; // 12 Mb for the synth, rt-memory for DelayC and friends
 	s.options.maxNodes = 1024 * 4; // increase the maximum number of nodes to play simultaneously
+
+	// tips:
+	// s.options.blockSize = 1; //great when using NRT to maximize the resolution of the 
+				    // control rate ugens during the render
 };
 
 // hook up jack ports to audio channels
@@ -24,6 +28,8 @@ Score.program = Server.program;
  
 //---- now set up our gui portion ----//
 GUI.swing; //use swingosc
+
+//"AWT_TOOLKIT".setenv("MToolkit"); //necessary when working with Awesome WM 
 
 SwingOSC.program = "/usr/share/SwingOSC/SwingOSC.jar";
 
