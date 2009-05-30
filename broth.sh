@@ -14,6 +14,9 @@ serverconf() {
         echo "bob the builder mode"
         PUREDYNE_VERSION="pure:dyne carrot&coriander"
         BUILD_DIRECTORY="/goto/puredyne-build"
+        BUILD_MIRRORS="--mirror-bootstrap \"http://mirror.ox.ac.uk/debian/\" \
+        --mirror-chroot \"http://mirror.ox.ac.uk/debian/\" \
+        --mirror-chroot-security \"http://security.debian.org/\""
 #        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
 #        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
 #        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
@@ -58,7 +61,7 @@ lh_config \
 }
 
 stock() {
-    sudo cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
+    cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
 }
 
 broken_config() {
@@ -76,11 +79,12 @@ make_soup() {
     else
         cd $BUILD_DIRECTORY
         sudo lh clean
+        rm -rf $BUILD_DIRECTORY/config
     fi
     brothconfig
     stock
     broken_config
-    sudo lh_build | tee broth.log
+    sudo lh build | tee broth.log
 }
 
 make_soup
