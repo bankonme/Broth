@@ -6,7 +6,7 @@
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
 PUREDYNE_PACKAGES="puredyne-CD"
-PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure-686 linux-headers-2.6.29.3-rt14-pure-686"
+PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure linux-headers-2.6.29.3-rt14-pure"
 
 # live builder specific settings
 serverconf() {
