@@ -5,7 +5,6 @@
 # global variables
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
-PUREDYNE_PACKAGES="puredyne-CD"
 PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure linux-headers-2.6.29.3-rt14-pure"
 
 # live builder specific settings
@@ -50,7 +49,7 @@ lh_config \
     --language "en" \
     --linux-flavours "686" \
     --linux-packages $PUREDYNE_LINUX \
-    --packages-lists $PUREDYNE_PACKAGES \
+    --packages-lists $PACKAGES_LISTS \
     --categories "main non-free contrib" \
     --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
     --architecture "i386" \
@@ -87,5 +86,33 @@ make_soup() {
     sudo lh build | tee broth.log
 }
 
-make_soup
+usage()
+{
+cat << EOF
+BROTH - The mother of all soups
+usage: $0 options
+   -h      Show this message
+   -o      Choose output (CD or DVD)
+EOF
+}
+
+if [ "$1" == "" ]; then
+    usage ; exit 1
+else
+    while getopts "ho:" OPTION ; do
+	case $OPTION in
+	    h)  usage ; exit 1;;
+            o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
+		if [ $OPTARG == "CD" -o $OPTARG == "DVD" ]; then
+                    PACKAGES_LISTS="puredyne-$OPTARG"
+		    echo "starting building of $PACKAGES_LISTS"
+		    make_soup
+		else
+                    echo "profile unknown, kthxbye"; exit -1
+		fi
+		;;
+	    *) echo "Not recognized argument, kthxbye"; exit -1 ;;
+	esac
+    done
+fi
 
