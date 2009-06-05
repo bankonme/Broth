@@ -27,7 +27,8 @@ gjacktransport
 
 # DVD authoring
 dvdauthor
-qdvdauthor
+#qdvdauthor
+dvdstyler
 
 # Temp fix - see #665
 luvcview
