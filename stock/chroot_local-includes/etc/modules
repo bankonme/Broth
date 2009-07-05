@@ -4,5 +4,8 @@
 # at boot time, one per line. Lines beginning with "#" are ignored.
 
 loop
-snd-seq # for midi alsa seq
-snd-pcm-oss # to have /dev/dsp loaded
+
+# for midi alsa seq
+snd-seq
+# to have /dev/dsp loaded
+snd-pcm-oss
