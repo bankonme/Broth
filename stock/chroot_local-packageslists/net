@@ -19,3 +19,7 @@ network-manager-gnome
 
 # Network Share
 nfs-common
+
+# /mode +v noise 
+liblo01db1
+python-irclib
