@@ -5,6 +5,7 @@ make
 gcc-4.2
 
 subversion
+mercurial
 
 # emacs stuff
 emacs-goodies-el

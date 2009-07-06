@@ -1,7 +1,6 @@
 # extra non-CD dev packages
 
 darcs
-mercurial
 cvs
 
 python-doc
