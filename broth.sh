@@ -92,7 +92,7 @@ cat << EOF
 BROTH - The mother of all soups
 usage: $0 options
    -h      Show this message
-   -o      Choose output (CD or DVD)
+   -o      Choose output (CD or DVD or CUSTOM)
 EOF
 }
 
@@ -103,7 +103,7 @@ else
 	case $OPTION in
 	    h)  usage ; exit 1;;
             o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
-		if [ $OPTARG == "CD" -o $OPTARG == "DVD" ]; then
+		if [ $OPTARG == "CD" -o $OPTARG == "DVD" -o $OPTARG == "CUSTOM"]; then
                     PACKAGES_LISTS="puredyne-$OPTARG"
 		    echo "starting building of $PACKAGES_LISTS"
 		    make_soup
