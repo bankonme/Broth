@@ -1,8 +1,12 @@
 [Entry 0]
 Name=Web Browser
+Comment=Surf the internet
+Icon=applications-internet
 Exec=exo-open --launch WebBrowser
 Terminal=false
 StartupNotify=false
-Comment=Surf the internet
-X-XFCE-IconCategory=7
+
+[Global]
+MoveFirst=false
+ArrowPosition=0
 
