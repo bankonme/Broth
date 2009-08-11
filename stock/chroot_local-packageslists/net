@@ -10,8 +10,8 @@ lftp
 
 # Browsers and plugins
 links2
-mozilla-plugin-gnash
-mozilla-mplayer
+#mozilla-plugin-gnash
+#mozilla-mplayer
 
 # Connectivity
 network-manager

@@ -13,9 +13,9 @@ serverconf() {
         echo "bob the builder mode"
         PUREDYNE_VERSION="pure:dyne carrot&coriander"
         BUILD_DIRECTORY="/goto/puredyne-build"
-        BUILD_MIRRORS="--mirror-bootstrap \"http://mirror.ox.ac.uk/debian/\" \
-        --mirror-chroot \"http://mirror.ox.ac.uk/debian/\" \
-        --mirror-chroot-security \"http://security.debian.org/\""
+        BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
+        --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
+        --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
 #        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
 #        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
 #        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
@@ -32,11 +32,10 @@ serverconf() {
 brothconfig() {
 lh_config \
     $BUILD_MIRRORS \
-    --mirror-binary "http://mirror.ox.ac.uk/debian/" \
-    --mirror-binary-security "http://security.debian.org/" \
+    --mirror-binary "http://fr.archive.ubuntu.com/ubuntu" \
+    --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
     --binary-indices disabled \
     --bootappend-live "persistent" \
-    --debian-installer-distribution "lenny" \
     --hostname "puredyne" \
     --iso-application "pure:dyne team" \
     --iso-preparer "live-helper $VERSION" \
@@ -50,10 +49,10 @@ lh_config \
     --linux-flavours "686" \
     --linux-packages $PUREDYNE_LINUX \
     --packages-lists $PACKAGES_LISTS \
-    --categories "main non-free contrib" \
-    --keyring-packages "debian-archive-keyring debian-multimedia-keyring debian-puredyne-keyring" \
+    --categories "main restricted universe" \
     --architecture "i386" \
-    --distribution "lenny" \
+    --mode "ubuntu" \
+    --distribution "jaunty" \
     --apt "aptitude" \
     --apt-recommends "disabled" \
     --apt-secure "disabled"
