@@ -5,7 +5,8 @@
 # global variables
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
-PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure linux-headers-2.6.29.3-rt14-pure"
+#PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure linux-headers-2.6.29.3-rt14-pure"
+PUREDYNE_LINUX="linux-image"
 
 # live builder specific settings
 serverconf() {
@@ -46,13 +47,14 @@ lh_config \
     --syslinux-menu "enabled" \
     --username "lintian" \
     --language "en" \
-    --linux-flavours "686" \
     --linux-packages $PUREDYNE_LINUX \
+    --linux-flavours "generic" \
     --packages-lists $PACKAGES_LISTS \
     --categories "main restricted universe" \
     --architecture "i386" \
     --mode "ubuntu" \
-    --distribution "jaunty" \
+    --distribution "karmic" \
+    --initramfs "live-initramfs" \
     --apt "aptitude" \
     --apt-recommends "disabled" \
     --apt-secure "disabled"
