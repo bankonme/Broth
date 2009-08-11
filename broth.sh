@@ -38,7 +38,7 @@ lh_config \
     --binary-indices disabled \
     --bootappend-live "persistent" \
     --hostname "puredyne" \
-    --iso-application "pure:dyne team" \
+    --iso-application "pure:dyne" \
     --iso-preparer "live-helper $VERSION" \
     --iso-publisher "pure:dyne team; http://puredyne.goto10.org; puredyne-team@goto10.org" \
     --iso-volume $PUREDYNE_VERSION \
@@ -50,7 +50,7 @@ lh_config \
     --linux-packages $PUREDYNE_LINUX \
     --linux-flavours "generic" \
     --packages-lists $PACKAGES_LISTS \
-    --categories "main restricted universe" \
+    --categories "main restricted universe multiverse" \
     --architecture "i386" \
     --mode "ubuntu" \
     --distribution "karmic" \
