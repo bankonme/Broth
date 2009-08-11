@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-desktop" version="1.0">
+  <property name="desktop-icons" type="empty">
+    <property name="style" type="int" value="2"/>
+    <property name="icon-size" type="uint" value="32"/>
+    <property name="use-custom-font-size" type="bool" value="false"/>
+  </property>
+  <property name="desktop-menu" type="empty">
+    <property name="show" type="bool" value="true"/>
+    <property name="show-icons" type="bool" value="true"/>
+  </property>
+  <property name="windowlist-menu" type="empty">
+    <property name="show" type="bool" value="true"/>
+  </property>
+  <property name="backdrop" type="empty">
+    <property name="screen0" type="empty">
+      <property name="monitor0" type="empty">
+        <property name="brightness" type="int" value="0"/>
+        <property name="color1" type="array">
+          <value type="uint" value="30326"/>
+          <value type="uint" value="33667"/>
+          <value type="uint" value="45489"/>
+          <value type="uint" value="65535"/>
+        </property>
+        <property name="color2" type="array">
+          <value type="uint" value="21074"/>
+          <value type="uint" value="21845"/>
+          <value type="uint" value="23130"/>
+          <value type="uint" value="65535"/>
+        </property>
+        <property name="color-style" type="int" value="2"/>
+        <property name="image-path" type="string" value="/home/lintian/Backgrounds/puredyne-logo-desktop.png"/>
+        <property name="image-style" type="int" value="1"/>
+        <property name="image-show" type="bool" value="true"/>
+        <property name="last-image" type="string" value="/home/lintian/Backgrounds/puredyne-logo-desktop.png"/>
+        <property name="last-single-image" type="string" value="/home/lintian/Backgrounds/puredyne-logo-desktop.png"/>
+      </property>
+    </property>
+  </property>
+</channel>
