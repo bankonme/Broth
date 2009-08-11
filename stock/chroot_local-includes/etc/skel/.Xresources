@@ -1,0 +1,14 @@
+XTerm*ReverseVideo:     true
+XTerm*jumpScroll:       true
+XTerm*CursorBlink:      false
+XTerm*CursorColor:      #87FF00
+XTerm*Background:       #102030
+XTerm*scrollTtyOutput:  true
+XTerm*BorderColor:      black
+XTerm*BorderWidth:      1
+XTerm*eightBitInput:    false
+XTerm*metaSendsEscape:  true
+XTerm*font:             -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso10646-*
+XTerm*boldMode:         false
+XTerm*saveLines:        1000
+XTerm*translations:     #override : select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
