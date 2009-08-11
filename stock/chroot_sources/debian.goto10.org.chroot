@@ -1,6 +1,0 @@
-# GOTO10
-#deb http://10.80.80.20:3142/debian.goto10.org/debian/ lenny main contrib non-free
-#deb-src http://10.80.80.20:3142/debian.goto10.org/debian/ lenny main contrib non-free
-
-deb http://debian.goto10.org/debian/ lenny main contrib non-free
-deb-src http://debian.goto10.org/debian/ lenny main contrib non-free
