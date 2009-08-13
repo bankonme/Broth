@@ -1,5 +1,13 @@
 # system stuff
 
+zsh
+
+vim 
+nano
+
+man-db
+most
+
 acpid
 acpi-support
 
@@ -15,6 +23,7 @@ powertop
 reiserfsprogs
 ntfsprogs
 dosfstools
+hfsprogs
 parted
 gparted
 
