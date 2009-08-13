@@ -15,8 +15,6 @@ tango-icon-theme
 gtk2-engines
 
 # default
-#thunar
-#xfdesktop4
 xfce4
 xfce4-xfapplet-plugin
 xfce4-xkb-plugin
@@ -26,8 +24,6 @@ thunar-volman
 gnome-alsamixer
 
 # cute and small
-#dwm
-#dwm-tools
 awesome
 evilwm
 
