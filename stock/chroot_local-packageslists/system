@@ -1,9 +1,5 @@
 # system stuff
 
-# keys (not needed before, needs to investigate)
-debian-multimedia-keyring
-debian-puredyne-keyring
-
 acpid
 acpi-support
 
@@ -32,8 +28,6 @@ module-assistant
 lilo
 syslinux
 grub
-
-bzip2
 
 ubiquity
 ubiquity-frontend-gtk
