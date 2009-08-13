@@ -17,7 +17,7 @@ timidity
 rosegarden
 
 # Sampling
-linuxsampler
+#linuxsampler
 qsampler
 
 # CDrip
