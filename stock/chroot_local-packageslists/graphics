@@ -1,9 +1,5 @@
 # 3D, Vector and Raster application
 
-# 3D
-#blender
-#yafray
-
 # digital photo
 ufraw
 rawstudio
@@ -18,7 +14,7 @@ inkscape
 graphviz
 
 # RT
-fluxus
+#fluxus
 
 # need Java so it's installed in the hook
 #puredyne-processing
