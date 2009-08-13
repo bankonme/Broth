@@ -2,41 +2,34 @@
 
 # multimedia players
 mplayer
-smplayer
-# VLC temp disabled - see #655
-#vlc
-#vlc-plugin-jack
+vlc
+vlc-plugin-jack
 
 # DV tools
 dvgrab
 kino
-libpt-plugins-avc
-dv2sub
 
-xjadeo
+#xjadeo
 
 cinelerra
-#pitivi
 
 # encoding
 avidemux
-#transcode
+transcode
 mencoder
 
-gjacktransport
+#gjacktransport
 
 # DVD authoring
 dvdauthor
-#qdvdauthor
 dvdstyler
 
 # Temp fix - see #665
 luvcview
 xawtv
+xawtv-plugins
 
 vgrabbj
 
 freej
 
-# Codecs
-w32codecs
