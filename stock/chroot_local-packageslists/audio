@@ -9,15 +9,15 @@ libasound2-plugins
 # JACK stuff
 jackd
 qjackctl
-jackbytes
-gjacktransport
+#jackbytes
+#gjacktransport
 jack-rack
 jack-tools
 
 # Pd
-puredyne-puredata
+#puredyne-puredata
 # to be removed - see #609 
-pd-pix-opencv 
+#pd-pix-opencv 
 
 # Supercollider
 # Reminder: sc is installed with a hook. see #534
@@ -25,13 +25,13 @@ pd-pix-opencv
 
 # ladspa
 csladspa
+fil-plugins
 vco-plugins
 tap-plugins
 swh-plugins
 rev-plugins
-omins
 mcp-plugins
-ladspa-sdk
+omins
 cmt
 caps
 blop
@@ -39,8 +39,8 @@ blepvco
 amb-plugins
 
 # lv2
-mda-lv2-plugins
-swh-lv2-plugins
+#mda-lv2-plugins
+#swh-lv2-plugins
 
 # dssi
 wsynth-dssi
@@ -56,10 +56,8 @@ tclcsound
 csound-gui
 python-csound
 python-csoundac
-libcsoundac5.1
-#csound-doc
 mmm-mode
-csoundx
+#csoundx
 
 # ardour
 ardour-i686
@@ -68,7 +66,7 @@ ardour-i686
 seq24
 
 # Misc / To be sorted
-milkytracker=0.90.80-2
+milkytracker
 mx44
 chuck
 audacity
