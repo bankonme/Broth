@@ -4,6 +4,7 @@
 #include <firmware>
 #include <graphics>
 #include <hardware>
+#include <medibuntu>
 #include <net>
 #include <streaming>
 #include <system>

@@ -1,7 +1,5 @@
 # firmware packages
 
-alsa-firmware
-
 # EZ-USB related
 fxload
 midisport-firmware
