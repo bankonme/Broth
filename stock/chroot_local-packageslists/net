@@ -21,6 +21,5 @@ network-manager-gnome
 nfs-common
 
 # /mode +v noise 
-liblo01db1
 python-irclib
 python-liblo
