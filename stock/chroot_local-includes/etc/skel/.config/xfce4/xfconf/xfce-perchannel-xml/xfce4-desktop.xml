@@ -30,11 +30,11 @@
           <value type="uint" value="65535"/>
         </property>
         <property name="color-style" type="int" value="2"/>
-        <property name="image-path" type="string" value="/home/lintian/Backgrounds/puredyne-logo-desktop.png"/>
+        <property name="image-path" type="string" value="/usr/share/xfce4/backdrops/puredyne-logo-desktop.png"/>
         <property name="image-style" type="int" value="1"/>
         <property name="image-show" type="bool" value="true"/>
-        <property name="last-image" type="string" value="/home/lintian/Backgrounds/puredyne-logo-desktop.png"/>
-        <property name="last-single-image" type="string" value="/home/lintian/Backgrounds/puredyne-logo-desktop.png"/>
+        <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/puredyne-logo-desktop.png"/>
+        <property name="last-single-image" type="string" value="/usr/share/xfce4/backdrops/puredyne-logo-desktop.png"/>
       </property>
     </property>
   </property>
