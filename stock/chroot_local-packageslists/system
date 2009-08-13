@@ -34,3 +34,6 @@ syslinux
 grub
 
 bzip2
+
+ubiquity
+ubiquity-frontend-gtk
