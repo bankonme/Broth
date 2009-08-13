@@ -7,6 +7,7 @@ BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
 #PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure linux-headers-2.6.29.3-rt14-pure"
 PUREDYNE_LINUX="linux-image"
+PUREDYNE_ARCH="i386"
 
 # live builder specific settings
 serverconf() {
@@ -51,7 +52,7 @@ lh_config \
     --linux-flavours "generic" \
     --packages-lists $PACKAGES_LISTS \
     --categories "main restricted universe multiverse" \
-    --architecture "i386" \
+    --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
     --distribution "karmic" \
     --initramfs "live-initramfs" \
@@ -62,6 +63,7 @@ lh_config \
 
 stock() {
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
+    chmod -R o+rw $BUILD_DIRECTORY/config/
 }
 
 broken_config() {
@@ -94,6 +96,7 @@ BROTH - The mother of all soups
 usage: $0 options
    -h      Show this message
    -o      Choose output (CD or DVD or CUSTOM)
+   -a      Choose target architecture (EXPERIMENTAL!)
 EOF
 }
 
@@ -112,6 +115,13 @@ else
                     echo "profile unknown, kthxbye"; exit -1
 		fi
 		;;
+            a)  if [ $OPTARG == "i386" -o $OPTARG == "amd64" -o $OPTARG == "ppc" ]; then
+                    PUREDYNE_ARCH=$OPTARG
+                    echo "building puredyne for $OPTARG"
+                else
+                    echo "architecture unknown, kthxbye"; exit -1
+                fi
+                ;;
 	    *) echo "Not recognized argument, kthxbye"; exit -1 ;;
 	esac
     done

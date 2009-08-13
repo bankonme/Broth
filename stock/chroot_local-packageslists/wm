@@ -6,7 +6,7 @@
 # #include <xfce>
 
 # base system
-gdm
+#gdm
 xorg
 libgl1-mesa-dri
 
