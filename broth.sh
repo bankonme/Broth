@@ -14,7 +14,7 @@ serverconf() {
     if [ `cat /etc/hostname` == "builder" ]; then
         echo "bob the builder mode"
         PUREDYNE_VERSION="pure:dyne carrot&coriander"
-        BUILD_DIRECTORY="/goto/puredyne-build"
+        BUILD_DIRECTORY="/goto/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
@@ -24,7 +24,7 @@ serverconf() {
     else
         echo "remix/test mode"
         PUREDYNE_VERSION="pure:dyne remix"
-        BUILD_DIRECTORY="/home/$BUILDER/puredyne-build"
+        BUILD_DIRECTORY="/home/$BUILDER/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://mirror.ox.ac.uk/debian/\" \
         --mirror-chroot \"http://mirror.ox.ac.uk/debian/\" \
         --mirror-chroot-security \"http://security.debian.org/\""
@@ -103,14 +103,14 @@ EOF
 if [ "$1" == "" ]; then
     usage ; exit 1
 else
-    while getopts "ho:" OPTION ; do
+    while getopts "ho:a:" OPTION ; do
 	case $OPTION in
 	    h)  usage ; exit 1;;
             o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
 		if [ $OPTARG == "CD" -o $OPTARG == "DVD" -o $OPTARG == "CUSTOM" ]; then
                     PACKAGES_LISTS="puredyne-$OPTARG"
 		    echo "starting building of $PACKAGES_LISTS"
-		    make_soup
+		    #make_soup
 		else
                     echo "profile unknown, kthxbye"; exit -1
 		fi
@@ -126,4 +126,6 @@ else
 	esac
     done
 fi
+
+make_soup
 
