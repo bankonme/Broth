@@ -2,7 +2,7 @@
 
 # compilation
 make
-gcc-4.2
+gcc
 
 subversion
 mercurial
