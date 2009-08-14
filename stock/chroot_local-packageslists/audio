@@ -9,15 +9,23 @@ libasound2-plugins
 # JACK stuff
 jackd
 qjackctl
-#jackbytes
-#gjacktransport
+jackbytes
+gjacktransport
 jack-rack
 jack-tools
 
 # Pd
-#puredyne-puredata
-# to be removed - see #609 
-#pd-pix-opencv 
+puredata
+pd-abstractions
+pd-arduino
+pd-container
+pd-cxc
+pd-iemmatrix
+pd-libstdcpp
+pd-pdp
+pd-pdp-opencv
+pd-pidip
+
 
 # Supercollider
 # Reminder: sc is installed with a hook. see #534
