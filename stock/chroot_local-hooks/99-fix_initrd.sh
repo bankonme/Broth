@@ -1,5 +1,5 @@
 #!/bin/sh
-INTRD=/initrd1.img
+INTRD=/boot/initrd.img-2.6.31-5-generic
 WDIR=/tmp/wdir
 
 mkdir -p $WDIR/fixedinit 
