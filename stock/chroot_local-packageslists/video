@@ -21,7 +21,7 @@ transcode
 mencoder
 x264
 
-#gjacktransport
+gjacktransport
 
 # DVD authoring
 dvdauthor
@@ -36,3 +36,5 @@ vgrabbj
 freej
 
 subtitleeditor
+
+#processing

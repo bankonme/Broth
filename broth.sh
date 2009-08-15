@@ -34,7 +34,7 @@ serverconf() {
 brothconfig() {
 lh_config \
     $BUILD_MIRRORS \
-    --mirror-binary "http://fr.archive.ubuntu.com/ubuntu" \
+    --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
     --binary-indices disabled \
     --bootappend-live "persistent" \

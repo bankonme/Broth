@@ -3,6 +3,7 @@
 # compilation
 make
 gcc
+patchutils
 
 subversion
 mercurial
