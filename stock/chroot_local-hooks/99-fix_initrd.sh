@@ -1,5 +1,5 @@
 #!/bin/sh
-INTRD=/live/initrd1.img
+INTRD=/initrd1.img
 WDIR=/tmp/wdir
 
 mkdir -p $WDIR/fixedinit 
