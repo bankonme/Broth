@@ -25,9 +25,9 @@ serverconf() {
         echo "remix/test mode"
         PUREDYNE_VERSION="pure:dyne remix"
         BUILD_DIRECTORY="/home/$BUILDER/puredyne-build-$PUREDYNE_ARCH"
-        BUILD_MIRRORS="--mirror-bootstrap \"http://mirror.ox.ac.uk/debian/\" \
-        --mirror-chroot \"http://mirror.ox.ac.uk/debian/\" \
-        --mirror-chroot-security \"http://security.debian.org/\""
+        BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
+        --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
+        --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
     fi
 }
 
