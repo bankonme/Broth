@@ -1,12 +1,14 @@
-#!/bin/sh
-INTRD=/boot/initrd.img-2.6.31-5-generic
-WDIR=/tmp/wdir
-
-mkdir -p $WDIR/fixedinit 
+#!/bin/bash -e
+INTRD=/boot/initrd.img-`uname -r`
+#INTRD=/home/anton/initrd1.img
+WDIR=/tmp/
+echo $INTRD
+mkdir -p $WDIR/old
+mkdir -p $WDIR/new
 cd $WDIR
 cp $INTRD $WDIR/init.gz
 gunzip init.gz 
-cd $WDIR/fixinit
+cd $WDIR/old
 cpio -i < ../init
 #now we make our changes 
 
@@ -63,7 +65,7 @@ diff -ruN orig/scripts/live-helpers new/scripts/live-helpers
  				return
 
 EOF
-patch -p0
+patch -p1
 
 find ./ | cpio -H newc -o > ../initrd
 cd $WDIR 
