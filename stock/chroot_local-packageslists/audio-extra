@@ -23,8 +23,9 @@ qsampler
 # CDrip
 icedax
 
-# traverso DAW
+# DAW's
 traverso
-
-# qtractor DAW
 qtractor
+
+# compression tools
+wavpack
