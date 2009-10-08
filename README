@@ -1,0 +1,16 @@
+Broth
+-----
+
+This is broth, the mother of all soups.
+
+A simple high-level script used to generate Ubuntu based live distros
+using the Debian-Live framework.
+
+Broth is at the moment focussing on producing Puredyne live images but
+it can be used for virtually any other live systems.
+
+
+Documentation
+-------------
+
+FIXME
