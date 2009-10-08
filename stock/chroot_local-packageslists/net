@@ -12,8 +12,7 @@ lftp
 
 # Browsers and plugins
 links2
-#mozilla-plugin-gnash
-#mozilla-mplayer
+gecko-mediaplayer
 
 # Connectivity
 network-manager
