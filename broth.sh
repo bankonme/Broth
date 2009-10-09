@@ -131,7 +131,7 @@ else
                     echo "profile unknown, kthxbye"; exit -1
 		fi
 		;;
-            a)  if [ $OPTARG == "i386" -o $OPTARG == "amd64" -o $OPTARG == "ppc" ]; then
+            a)  if [ $OPTARG == "i386" -o $OPTARG == "amd64" -o $OPTARG == "lpia" ]; then
                     PUREDYNE_ARCH=$OPTARG
                     echo "building puredyne for $OPTARG"
                 else
