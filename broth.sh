@@ -96,13 +96,13 @@ make_soup() {
 	cd $BUILD_DIRECTORY
     else
         cd $BUILD_DIRECTORY
-        sudo lh clean
+        sudo lh clean 
         rm -rf $BUILD_DIRECTORY/config
     fi
     brothconfig
     stock
     broken_config
-    sudo lh build | tee broth.log
+    sudo lh build  2>&1| tee broth.log
 }
 
 usage()
