@@ -42,3 +42,6 @@ ubiquity
 ubiquity-frontend-gtk
 
 das-watchdog
+
+# this is needed for the locale not found errors but it installes all en_* locales...
+language-pack-en
