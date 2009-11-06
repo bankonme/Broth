@@ -21,8 +21,8 @@
 # global variables
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
-#PUREDYNE_LINUX="linux-image-2.6.29.3-rt14-pure linux-headers-2.6.29.3-rt14-pure"
-PUREDYNE_LINUX="linux-image"
+PUREDYNE_LINUX="linux-image-2.6.31-1-pure linux-rt-headers-2.6.31-1-pure"
+#PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
 
 # live builder specific settings
@@ -65,7 +65,7 @@ lh_config \
     --username "lintian" \
     --language "en" \
     --linux-packages $PUREDYNE_LINUX \
-    --linux-flavours "generic" \
+    --linux-flavours "pure" \
     --packages-lists $PACKAGES_LISTS \
     --categories "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \

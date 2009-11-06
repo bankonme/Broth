@@ -36,7 +36,7 @@ module-assistant
 
 lilo
 syslinux
-grub
+grub2
 
 ubiquity
 ubiquity-frontend-gtk
