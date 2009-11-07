@@ -3,7 +3,7 @@
 <channel name="xfce4-desktop" version="1.0">
   <property name="desktop-icons" type="empty">
     <property name="style" type="int" value="2"/>
-    <property name="icon-size" type="uint" value="32"/>
+    <property name="icon-size" type="uint" value="48"/>
     <property name="use-custom-font-size" type="bool" value="false"/>
   </property>
   <property name="desktop-menu" type="empty">
