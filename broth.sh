@@ -21,7 +21,7 @@
 # global variables
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
-PUREDYNE_LINUX="linux-image-2.6.31-1-pure linux-rt-headers-2.6.31-1-pure"
+PUREDYNE_LINUX="linux-image-2.6.31-4"
 #PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
 
