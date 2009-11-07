@@ -18,15 +18,15 @@
       <property name="monitor0" type="empty">
         <property name="brightness" type="int" value="0"/>
         <property name="color1" type="array">
-          <value type="uint" value="30326"/>
-          <value type="uint" value="33667"/>
-          <value type="uint" value="45489"/>
+          <value type="uint" value="48640"/>
+          <value type="uint" value="0"/>
+          <value type="uint" value="0"/>
           <value type="uint" value="65535"/>
         </property>
         <property name="color2" type="array">
-          <value type="uint" value="21074"/>
-          <value type="uint" value="21845"/>
-          <value type="uint" value="23130"/>
+          <value type="uint" value="0"/>
+          <value type="uint" value="0"/>
+          <value type="uint" value="0"/>
           <value type="uint" value="65535"/>
         </property>
         <property name="color-style" type="int" value="2"/>
