@@ -1,4 +1,5 @@
 #!/bin/bash  
+# broth/stock/chroot_local-hooks/75-pdrc_gen.sh
 # this script generates the .pdrc file
 # it takes the pdrc_template.txt plus the results of a find command
 # to assemble the final .pdrc
