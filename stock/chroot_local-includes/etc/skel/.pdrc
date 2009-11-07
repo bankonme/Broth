@@ -1,0 +1,24 @@
+-path /usr/lib/pd/extra/libstdcpp    -lib libstdcpp
+
+-lib bonk~:choice:expr:fiddle~:loop~:lrshift~:pique:sigmund~
+-lib pd~:stdout
+
+-path /usr/lib/pd/extra/creb         -lib creb
+-path /usr/lib/pd/extra/cxc          -lib cxc
+-path /usr/lib/pd/extra/iemlib       -lib iemlib1:iemlib2:iem_mp3:iem_t3_lib
+-path /usr/lib/pd/extra/iemmatrix    -lib iemmatrix
+-path /usr/lib/pd/extra/lua          -lib lua
+-path /usr/lib/pd/extra/PDContainer  -lib PDContainer
+-path /usr/lib/pd/extra/zexy         -lib zexy
+
+-path /usr/lib/pd/extra/Gem          -lib Gem
+-path /usr/lib/pd/extra/gridflow     -lib gridflow
+-path /usr/lib/pd/extra/pdp          -lib pdp
+-path /usr/lib/pd/extra/gem2pdp      -lib gem2pdp:pdp2gem:pix_2pdp
+-path /usr/lib/pd/extra/pidip        -lib pidip
+
+-path /usr/lib/pd/extra/pdp_opencv
+-path /usr/lib/pd/extra/pix_opencv
+-path /usr/lib/pd/extra/unauthorized
+
+-jack -channels 2
