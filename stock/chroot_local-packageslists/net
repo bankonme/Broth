@@ -1,14 +1,16 @@
 # net app
 
+# ssh, ftp & telnet
+openssh-server
+telnet
+lftp
+
+# browser
 firefox
 
-wireless-tools
-pppoeconf
-
+# IRC
 xchat
 irssi
-
-lftp
 
 # Browsers and plugins
 links2
@@ -17,6 +19,8 @@ gecko-mediaplayer
 # Connectivity
 network-manager
 network-manager-gnome
+wireless-tools
+pppoeconf
 
 # Network Share
 nfs-common
