@@ -3,7 +3,7 @@
 # Shitty hack to trick dpkg to install cinelerra from the akirad repos in the chroot.
 
 # dependencies
-aptitude --assume-yes install libx264 optlibx11-noxcb-data optlibx11-noxcb-6 libguicastcv libmpeg3cv libquicktimecv akiradnews
+aptitude --assume-yes install optlibx11-noxcb-data optlibx11-noxcb-6 libguicastcv libmpeg3cv libquicktimecv akiradnews
 
 apt-get install --assume-yes --download-only cinelerracv
 dpkg --unpack /var/cache/apt/archives/cinelerracv*
