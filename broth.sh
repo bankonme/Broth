@@ -29,7 +29,7 @@ PUREDYNE_ARCH="i386"
 serverconf() {
     if [ `cat /etc/hostname` == "builder" ]; then
         echo "bob the builder mode"
-        PUREDYNE_VERSION="pure:dyne carrot&coriander"
+        PUREDYNE_VERSION="Puredyne carrot&coriander"
         BUILD_DIRECTORY="/goto/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
@@ -39,7 +39,7 @@ serverconf() {
 #        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
     else
         echo "remix/test mode"
-        PUREDYNE_VERSION="pure:dyne remix"
+        PUREDYNE_VERSION="Puredyne remix"
         BUILD_DIRECTORY="/home/$BUILDER/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
@@ -55,9 +55,9 @@ lh_config \
     --binary-indices disabled \
     --bootappend-live "persistent" \
     --hostname "puredyne" \
-    --iso-application "pure:dyne" \
+    --iso-application "Puredyne" \
     --iso-preparer "live-helper $VERSION" \
-    --iso-publisher "pure:dyne team; http://puredyne.goto10.org; puredyne-team@goto10.org" \
+    --iso-publisher "Puredyne team; http://puredyne.goto10.org; puredyne-team@goto10.org" \
     --iso-volume $PUREDYNE_VERSION \
     --syslinux-splash "config/binary_syslinux/splash.rle" \
     --syslinux-timeout "10" \
