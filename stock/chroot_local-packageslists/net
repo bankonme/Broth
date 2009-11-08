@@ -28,3 +28,6 @@ nfs-common
 # /mode +v noise 
 python-irclib
 python-liblo
+
+# Misc
+unarchive
