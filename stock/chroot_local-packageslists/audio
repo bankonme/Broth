@@ -96,3 +96,34 @@ oggz-tools
 lltag
 
 sooperlooper
+
+# supercollider packages
+supercollider
+supercollider-bbcut2
+supercollider-common-dev
+supercollider-dev
+supercollider-doc
+supercollider-emacs
+supercollider-fougens-astrocade
+supercollider-fougens-atari2600
+supercollider-fougens-ay8910
+supercollider-fougens-beep
+supercollider-fougens-bit
+supercollider-fougens-mzpokey
+supercollider-fougens-nesapu
+supercollider-fougens-pokey
+supercollider-fougens-reddpcm
+supercollider-fougens-redlbyl
+supercollider-fougens-rednoise
+supercollider-fougens-redphasor
+supercollider-fougens-sid6581f
+supercollider-fougens-slub
+supercollider-fougens-sn76489
+supercollider-gedit
+supercollider-jtugens
+supercollider-plugins
+supercollider-quarks
+supercollider-server
+supercollider-server-dev
+supercollider-skugens
+supercollider-vim
