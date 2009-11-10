@@ -12,7 +12,7 @@ timeout 15
 # Entry for pure:dyne
 title pure:dyne
 root (hd0,0) # this is hda1, hda2 is (hd0,1), sdb3 is (hd1,2), etc..
-kernel /live/vmlinuz1 ramdisk_size=100000 boot=live persistent username=lintian hostname=puredyne vga=791
+kernel /live/vmlinuz1 ramdisk_size=100000 boot=live persistent username=lintian hostname=puredyne
 initrd /live/initrd1.img
 
 
