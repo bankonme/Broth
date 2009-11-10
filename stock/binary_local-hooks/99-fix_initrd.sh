@@ -2,16 +2,19 @@
 #
 # A script to unpack patch and repack the initrd in the binary stage.
 # Fixes the usb boot problem after the vol_id removed in ubuntu.
-INTRD=/goto/puredyne-build-i386/binary/live/initrd1.img #how can i pass LH variables here
 
-WDIR=$HOME/tmp
+INTRD=/goto/puredyne-build-i386/binary/live/initrd1.img # this works for the server
+# uncomment and change to your user for the script to work
+#INTRD=/home/anton/puredyne-build-i386/binary/live/initrd1.img 
 
-if [ ! -e "$INTRD" ] ;then
-    echo 'E: cannot find a valid initrd file at ' $INTRD
-    rm -rf $WDIR/new $WDIR/old
-    exit 1
+WDIR=$HOME/.tmprrr
+
+if [ ! -r $INTRD ] ;then
+    echo 'E: cannot find a valid initrd file at ' $INTRD ' aborting sequence'
+    rm -rf $WDIR/
+    exit 0
 fi
-
+rm -rf $WDIR/
 mkdir -p $WDIR/old
 mkdir -p $WDIR/new
 cd $WDIR
@@ -22,14 +25,6 @@ cpio -i < ../init
 #now we make our changes 
 
 cat <<"EOF" |
-diff -ruN orig/lib/udev/vol_id new/lib/udev/vol_id
---- orig/lib/udev/vol_id	1970-01-01 01:00:00.000000000 +0100
-+++ new/lib/udev/vol_id	2009-08-15 18:44:32.000000000 +0200
-@@ -0,0 +1,4 @@
-+#!/bin/sh
-+
-+blkid -o value -s LABEL $2 $1
-+exit 0
 diff -ruN orig/scripts/live-bottom/12fstab new/scripts/live-bottom/12fstab
 --- orig/scripts/live-bottom/12fstab	2009-08-15 18:44:15.000000000 +0200
 +++ new/scripts/live-bottom/12fstab	2009-08-15 18:44:32.000000000 +0200
@@ -82,7 +77,7 @@ gzip initrd
 cp initrd.gz $INTRD
 #clean up 
 
-rm -rf $WDIR/new $WDIR/old
+rm -rf $WDIR/
 
 exit 0
 
