@@ -89,6 +89,12 @@ broken_config() {
     echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
 }
 
+serve() {
+    if [ -e $BUILD_DIRECTORY/binary.iso ]; then
+	rsync -P $BUILD_DIRECTORY/binary.iso 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.iso
+    fi
+}
+
 make_soup() {
     serverconf
     if [ ! -d $BUILD_DIRECTORY ]; then
