@@ -5,13 +5,18 @@ ufraw
 rawstudio
 dcraw
 
-# Gimp related
+# Raster
 gimp
 gimp-ufraw
 
+# Vector
 inkscape
 
+# Viz
 graphviz
+
+# CLI
+imagemagick
 
 # RT
 #fluxus
