@@ -12,5 +12,20 @@ it can be used for virtually any other live systems.
 
 Documentation
 -------------
-
 FIXME
+depends:
+
+live-helper from snapshots (http://live.debian.net/debian/pool/snapshots/main/l/live-helper/)
+debootstrap-1.0.20 or higher
+
+
+usage
+
+./broth -o CD|DVD
+
+and have a few coffees and loads of biscuits. It takes a long time, esp. the first time.
+
+
+* note 
+for usb-boot edit stock/binary_local-hooks/99-fix_initrd.sh and change the INTRD variable 
+accordingly.
