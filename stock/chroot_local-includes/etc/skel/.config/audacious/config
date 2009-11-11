@@ -1,0 +1,4 @@
+[audacious]
+allow_multiple_instances=FALSE
+use_realtime=FALSE
+output_plugin=/usr/lib/audacious/Output/ALSA.so (#0)
