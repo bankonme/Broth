@@ -21,7 +21,7 @@
 # global variables
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
-PUREDYNE_LINUX="linux-image-2.6.31-4"
+PUREDYNE_LINUX="linux-image-2.6.31-5"
 #PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
 
@@ -74,7 +74,8 @@ lh_config \
     --initramfs "live-initramfs" \
     --apt "aptitude" \
     --apt-recommends "disabled" \
-    --apt-secure "disabled"
+    --apt-secure "disabled" \
+    --keyring-packages "ubuntu-keyring medibuntu-keyring akirad-keyring-and-mirrors puredyne-keyring"
 }
 
 stock() {
@@ -91,6 +92,8 @@ broken_config() {
 
 serve() {
     if [ -e $BUILD_DIRECTORY/binary.iso ]; then
+	md5sum $BUILD_DIRECTORY/binary.iso > binary.md5
+	rsync -P $BUILD_DIRECTORY/binary.md5 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.md5
 	rsync -P $BUILD_DIRECTORY/binary.iso 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.iso
     fi
 }
@@ -109,6 +112,7 @@ make_soup() {
     stock
     broken_config
     sudo lh build  2>&1| tee broth.log
+#    serve
 }
 
 usage()
