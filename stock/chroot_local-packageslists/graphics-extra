@@ -4,6 +4,8 @@ f-spot
 feh
 pixelize
 
+grafx2
+
 synfigstudio
 
 # Publishing
@@ -15,6 +17,8 @@ blender
 yafray
 blender-ogrexml
 wings3d
+mm3d
+
 
 # Ogre
 ogre-doc
