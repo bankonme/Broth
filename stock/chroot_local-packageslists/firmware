@@ -3,3 +3,8 @@
 # EZ-USB related
 fxload
 midisport-firmware
+
+#kernel firmware
+
+linux-firmware-nonfree
+linux-firmware
