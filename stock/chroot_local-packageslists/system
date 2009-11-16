@@ -44,6 +44,7 @@ ubiquity-frontend-gtk
 # provides add-apt-repository CLI
 python-software-properties
 
+rtirq-init
 das-watchdog
 
 # this is needed for the locale not found errors but it installes all en_* locales...
