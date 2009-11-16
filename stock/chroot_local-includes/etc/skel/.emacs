@@ -1,6 +1,3 @@
-;#####csound emacs mode#####
-(require 'stef-elisp)
-
 ;#####supercollider emacs mode#####
 
 (require 'sclang)
@@ -20,7 +17,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode -1)
 (transient-mark-mode 1)
-(menu-bar-mode 0)
+(menu-bar-mode t)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
