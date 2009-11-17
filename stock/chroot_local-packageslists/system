@@ -3,6 +3,7 @@
 zsh
 
 vim 
+vim-addon-manager
 nano
 
 man-db
