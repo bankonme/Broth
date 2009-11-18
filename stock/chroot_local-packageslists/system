@@ -3,7 +3,8 @@
 zsh
 
 vim 
-vim-addon-manager
+vim-addon-manager 	#needed for scvim
+unhtml 			#needed for scvim
 nano
 
 man-db
