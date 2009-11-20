@@ -44,10 +44,6 @@ alias df='df --human-readable'
 alias du='du --human-readable'
 alias grep='grep --color'
 
-# temp fixes https://bugs.launchpad.net/ubuntu/+source/emacs22/+bug/415101
-alias emacs='GDK_NATIVE_WINDOWS=1 emacs'
-
-
 # various -----------------------------------------------------------
 unsetopt ignore_eof 	# Ctrl+D acts like a 'logout'
 setopt print_exit_value # print exit code if different from '0'
