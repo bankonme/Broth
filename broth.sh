@@ -48,7 +48,7 @@ serverconf() {
 }
 
 brothconfig() {
-lh_config \
+lh config \
     $BUILD_MIRRORS \
     --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
@@ -84,7 +84,7 @@ stock() {
 }
 
 broken_config() {
-# The following arguments are not accepted by lh_config ATM
+# The following arguments are not accepted by lh config ATM
     echo "_DEBUG=\"enabled\"" >> $BUILD_DIRECTORY/config/common
     echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
     echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
