@@ -2,6 +2,7 @@
 #include <desktop>
 #include <dev>
 #include <firmware>
+#include <fonts>
 #include <graphics>
 #include <hardware>
 #include <medibuntu>
