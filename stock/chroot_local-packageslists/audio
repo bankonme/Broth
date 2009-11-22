@@ -19,12 +19,25 @@ puredata
 pd-abstractions
 pd-arduino
 pd-container
+pd-creb
 pd-cxc
+pd-gem
+pd-gem2pdp
+pd-gridflow
+pd-iemlib
 pd-iemmatrix
 pd-libstdcpp
+pd-lua
+pd-lyonpotpourri
+pd-mrpeach
+pd-opencv-data
+pd-oscbank
 pd-pdp
 pd-pdp-opencv
 pd-pidip
+pd-pix-opencv
+pd-unauthorized
+pd-zexy
 
 
 # Supercollider
