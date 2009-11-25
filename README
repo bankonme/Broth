@@ -16,6 +16,8 @@ FIXME
 depends:
 
 live-helper from snapshots (http://live.debian.net/debian/pool/snapshots/main/l/live-helper/)
+live-helper 1.0.5 as found in Ubuntu Karmic won't work, unless you replace 'lh foo' by 'lh_foo' in broth.sh - newer lh version recommended
+
 debootstrap-1.0.20 or higher
 
 

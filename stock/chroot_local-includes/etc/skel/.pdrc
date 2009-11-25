@@ -22,3 +22,5 @@
 -path /usr/lib/pd/extra/unauthorized
 
 -jack -channels 2
+-alsamidi -mididev 1,1
+-noautopatch
