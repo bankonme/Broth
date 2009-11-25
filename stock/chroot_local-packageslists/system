@@ -53,3 +53,7 @@ das-watchdog
 # this is needed for the locale not found errors but it installes all en_* locales...
 language-pack-en
 
+# power manager does a couple of important things (with the default settings we provide):
+# disables cpufreq scaling, makes poweroffbutton safer
+xfce4-power-manager
+
