@@ -6,3 +6,4 @@
 #include <graphics-extra>
 #include <video-extra>
 #include <music-extra>
+#include <fonts-extra>
