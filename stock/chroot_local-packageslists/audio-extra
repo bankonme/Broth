@@ -30,3 +30,5 @@ qtractor
 # compression tools
 wavpack
 aften
+
+vorbis-tools
