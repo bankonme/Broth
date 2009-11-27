@@ -1,1 +1,14 @@
 idjc
+
+
+gstreamer0.10-plugins-base-apps 
+
+gstreamer0.10-ffmpeg-full
+gstreamer0.10-lame
+gstreamer0.10-audiosink
+
+gstreamer0.10-nice
+gstreamer0.10-plugins-good 
+gstreamer0.10-plugins-really-bad
+gstreamer0.10-plugins-ugly 
+
