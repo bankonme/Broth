@@ -13,7 +13,6 @@ kino
 
 # disabled for now - see chroot hooks for install process
 #cinelerracv
-kdenlive
 
 # encoding
 avidemux
