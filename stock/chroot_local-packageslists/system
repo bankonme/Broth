@@ -46,6 +46,7 @@ ubiquity-frontend-gtk
 
 # provides add-apt-repository CLI
 python-software-properties
+python-gconf  # needed by sced (sc3 gedit)
 
 rtirq-init
 das-watchdog
