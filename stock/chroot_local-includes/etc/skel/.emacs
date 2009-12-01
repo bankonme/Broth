@@ -43,3 +43,18 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+## hack to make the cursor work normally in w3m-mode - thanks martin :)
+(eval-after-load "w3m"
+ '(progn
+ (define-key w3m-mode-map [left] 'backward-char)
+ (define-key w3m-mode-map [right] 'forward-char)
+ (define-key w3m-mode-map [up] 'previous-line)
+ (define-key w3m-mode-map [down] 'next-line)
+ (setq w3m-auto-show 1)
+;; (setq truncate-lines 1)
+;; (setq truncate-lines t)
+ ))
+
+
+
