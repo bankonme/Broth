@@ -1,0 +1,3 @@
+KERNEL=="raw1394", GROUP="disk"
+KERNEL=="dv1394*", GROUP="video"
+KERNEL=="video1394*", GROUP="video" 
