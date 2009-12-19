@@ -16,6 +16,10 @@ hydrogen-drumkits
 timidity
 rosegarden
 
+# Trackers
+schism
+
+
 # Sampling
 #linuxsampler
 qsampler
