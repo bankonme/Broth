@@ -9,6 +9,7 @@
 -path /usr/lib/pd/extra/iemmatrix    -lib iemmatrix
 -path /usr/lib/pd/extra/lua          -lib lua
 -path /usr/lib/pd/extra/PDContainer  -lib PDContainer
+-path /usr/lib/pd/extra/pd-ogg       -lib pdogg
 -path /usr/lib/pd/extra/zexy         -lib zexy
 
 -path /usr/lib/pd/extra/Gem          -lib Gem
