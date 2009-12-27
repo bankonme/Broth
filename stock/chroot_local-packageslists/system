@@ -3,8 +3,10 @@
 zsh
 
 vim 
-vim-addon-manager 	#needed for scvim
-unhtml 			#needed for scvim
+
+#needed for scvim
+vim-addon-manager
+unhtml 		
 nano
 
 man-db
@@ -46,7 +48,9 @@ ubiquity-frontend-gtk
 
 # provides add-apt-repository CLI
 python-software-properties
-python-gconf  # needed by sced (sc3 gedit)
+
+# needed by sced (sc3 gedit)
+python-gconf  
 
 rtirq-init
 das-watchdog
