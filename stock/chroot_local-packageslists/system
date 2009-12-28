@@ -40,7 +40,8 @@ module-assistant
 
 lilo
 syslinux
-mtools # see https://bugs.launchpad.net/ubuntu/+source/syslinux/+bug/75765
+# see https://bugs.launchpad.net/ubuntu/+source/syslinux/+bug/75765
+mtools 
 grub2
 
 ubiquity
