@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "9c9
+< Categories=Audio;AudioVideo;AudioVideoEditing;
+---
+> Categories=Video;AudioVideo;AudioVideoEditing;" | patch --no-backup-if-mismatch --forward /usr/share/applications/subtitleeditor.desktop
+

@@ -4,5 +4,5 @@
 echo "17c17
 < Categories=GTK;AudioVideo;Audio;Video;Player;TV;
 --
-> Categories=GTK;AudioVideo;Video;Player;TV;" | patch /usr/share/applications/mplayer.desktop
+> Categories=GTK;AudioVideo;Video;Player;TV;" | patch --no-backup-if-mismatch --forward /usr/share/applications/mplayer.desktop
 
