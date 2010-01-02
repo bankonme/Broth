@@ -48,7 +48,7 @@ serverconf() {
 }
 
 brothconfig() {
-lh config \
+lh_config \
     $BUILD_MIRRORS \
     --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
@@ -80,7 +80,6 @@ lh config \
 
 stock() {
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
-    chmod -R o+rw $BUILD_DIRECTORY/config/
 }
 
 broken_config() {
