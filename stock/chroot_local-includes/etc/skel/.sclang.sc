@@ -33,6 +33,9 @@ GUI.swing; //use swingosc
 
 SwingOSC.program = "/usr/share/SwingOSC/SwingOSC.jar";
 
+//We choose a LookAndFeel - for aesthetic purposes? Actually here we do it to prevent a warning showing in the post window
+SwingOSC.default.options.javaOptions = "-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel";
+
 g = SwingOSC.default;
 
 g.waitForBoot({
