@@ -67,7 +67,7 @@ lh config \
     --linux-packages $PUREDYNE_LINUX \
     --linux-flavours "pure" \
     --packages-lists $PACKAGES_LISTS \
-    --categories "main restricted universe multiverse" \
+    --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
     --distribution "karmic" \
