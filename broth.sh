@@ -61,11 +61,12 @@ lh config \
     --iso-volume $PUREDYNE_VERSION \
     --syslinux-splash "config/binary_syslinux/splash.rle" \
     --syslinux-timeout "10" \
-    --syslinux-menu "enabled" \
+    --syslinux-menu "true" \
     --username "lintian" \
     --language "en" \
     --linux-packages $PUREDYNE_LINUX \
     --linux-flavours "pure" \
+    --packages "rsync" \ # need be installed 1st to allow cpio to work during the initrd creation
     --packages-lists $PACKAGES_LISTS \
     --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
@@ -73,7 +74,7 @@ lh config \
     --distribution "karmic" \
     --initramfs "live-initramfs" \
     --apt "aptitude" \
-    --apt-recommends "disabled" \
+    --apt-recommends "false" \
     --apt-secure "false" \
     --keyring-packages "ubuntu-keyring medibuntu-keyring akirad-keyring-and-mirrors puredyne-keyring"
 }
