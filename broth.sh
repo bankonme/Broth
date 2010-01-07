@@ -1,6 +1,15 @@
 #!/bin/bash -e
 # broth.sh - the mother of all soups
-# Note: bash -e == exits on errors
+#
+# ---
+#
+# Notes: 
+# * bash -e == exits on errors
+# * rsync needs be installed 1st to allow cpio to work during the initrd creation
+#   so this is done with --packages because --packages-list seems to be ran later
+#   Need to make a ticket for that and investigate ...
+#
+# ---
 #
 #    Copyright (C) 2008-2009  Puredyne Team
 #
@@ -66,7 +75,7 @@ lh config \
     --language "en" \
     --linux-packages $PUREDYNE_LINUX \
     --linux-flavours "pure" \
-    --packages "rsync" \ # need be installed 1st to allow cpio to work during the initrd creation
+    --packages "rsync" \
     --packages-lists $PACKAGES_LISTS \
     --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
