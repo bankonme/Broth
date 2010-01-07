@@ -30,7 +30,7 @@ serverconf() {
     if [ `cat /etc/hostname` == "builder" ]; then
         echo "bob the builder mode"
         PUREDYNE_VERSION="Puredyne carrot&coriander"
-        BUILD_DIRECTORY="/goto/puredyne-build-$PUREDYNE_ARCH"
+        BUILD_DIRECTORY="/home/$BUILDER/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
