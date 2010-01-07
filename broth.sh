@@ -48,7 +48,7 @@ serverconf() {
 }
 
 brothconfig() {
-lh_config \
+lh config \
     $BUILD_MIRRORS \
     --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
