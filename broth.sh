@@ -74,7 +74,7 @@ lh config \
     --initramfs "live-initramfs" \
     --apt "aptitude" \
     --apt-recommends "disabled" \
-    --apt-secure "disabled" \
+    --apt-secure "false" \
     --keyring-packages "ubuntu-keyring medibuntu-keyring akirad-keyring-and-mirrors puredyne-keyring"
 }
 
@@ -86,7 +86,7 @@ broken_config() {
 # The following arguments are not accepted by lh config ATM
     echo "_DEBUG=\"enabled\"" >> $BUILD_DIRECTORY/config/common
     echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
-    echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
+#    echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
 }
 
 serve() {
