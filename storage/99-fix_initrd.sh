@@ -3,7 +3,7 @@
 # A script to unpack patch and repack the initrd in the binary stage.
 # Fixes the usb boot problem after the vol_id removed in ubuntu.
 
-INTRD=/goto/puredyne-build-i386/binary/live/initrd.img # this works for the server
+INTRD=/home/aym3ric/puredyne-build-i386/binary/live/initrd.img # this works for the server
 # uncomment and change to your user for the script to work
 #INTRD=/home/anton/puredyne-build-i386/binary/live/initrd.img 
 
