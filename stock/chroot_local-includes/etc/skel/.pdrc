@@ -18,6 +18,7 @@
 -path /usr/lib/pd/extra/gem2pdp      -lib gem2pdp:pdp2gem:pix_2pdp
 -path /usr/lib/pd/extra/pidip        -lib pidip
 
+-path /usr/lib/pd/extra/ext13
 -path /usr/lib/pd/extra/ggee
 -path /usr/lib/pd/extra/pdp_opencv
 -path /usr/lib/pd/extra/pix_opencv
