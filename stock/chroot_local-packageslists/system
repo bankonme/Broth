@@ -49,8 +49,9 @@ grub2
 ubiquity
 ubiquity-frontend-gtk
 
-# provides add-apt-repository CLI
+# provides add-apt-repository CLI and GUI
 python-software-properties
+software-properties-gtk
 
 # needed by sced (sc3 gedit)
 python-gconf  
