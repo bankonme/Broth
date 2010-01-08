@@ -24,12 +24,14 @@ less
 
 powertop
 
+# filesystem and disks
 reiserfsprogs
 ntfsprogs
 dosfstools
 hfsprogs
 parted
 gparted
+pysdm
 
 ntfs-3g
 sysfsutils
