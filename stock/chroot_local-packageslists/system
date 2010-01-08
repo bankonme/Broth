@@ -49,8 +49,9 @@ grub2
 ubiquity
 ubiquity-frontend-gtk
 
-# provides add-apt-repository CLI
+# provides add-apt-repository CLI and GUI
 python-software-properties
+software-properties-gtk
 
 # needed by sced (sc3 gedit)
 python-gconf  
@@ -59,7 +60,10 @@ rtirq-init
 das-watchdog
 
 # this is needed for the locale not found errors but it installes all en_* locales...
+language-selector
 language-pack-en
+language-pack-fr
+language-pack-es
 
 # power manager does a couple of important things (with the default settings we provide):
 # disables cpufreq scaling, makes poweroffbutton safer
