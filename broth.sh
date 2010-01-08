@@ -5,9 +5,6 @@
 #
 # Notes: 
 # * bash -e == exits on errors
-# * rsync needs be installed 1st to allow cpio to work during the initrd creation
-#   so this is done with --packages because --packages-list seems to be ran later
-#   Need to make a ticket for that and investigate ...
 #
 # ---
 #
@@ -61,7 +58,7 @@ lh config \
     $BUILD_MIRRORS \
     --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
-    --binary-indices disabled \
+    --binary-indices "true" \
     --bootappend-live "persistent automatic-ubiquity preseed/file=/live/image/pure.seed" \
     --hostname "puredyne" \
     --iso-application "Puredyne" \
@@ -75,8 +72,6 @@ lh config \
     --language "en" \
     --linux-packages $PUREDYNE_LINUX \
     --linux-flavours "pure" \
-    --packages "rsync" \
-    --packages-lists $PACKAGES_LISTS \
     --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
@@ -94,7 +89,7 @@ stock() {
 
 broken_config() {
 # The following arguments are not accepted by lh config ATM
-    echo "_DEBUG=\"enabled\"" >> $BUILD_DIRECTORY/config/common
+    echo "_DEBUG=\"true\"" >> $BUILD_DIRECTORY/config/common
     echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
 #    echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
 }
