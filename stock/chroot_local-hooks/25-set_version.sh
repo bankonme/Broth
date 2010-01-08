@@ -7,7 +7,6 @@
 DATE="/bin/date"
 
 VERSION=`${DATE} +%Y%m%d`
-# VERSION="leek&potato"
 
 echo "Setting VERSION file."
 echo ${VERSION} > /etc/VERSION
