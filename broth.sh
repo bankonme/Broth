@@ -96,7 +96,7 @@ broken_config() {
 
 serve() {
     if [ -e $BUILD_DIRECTORY/binary.iso ]; then
-	md5sum $BUILD_DIRECTORY/binary.iso > binary.md5
+	md5sum -b $BUILD_DIRECTORY/binary.iso > binary.md5
 	rsync -P $BUILD_DIRECTORY/binary.md5 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.md5
 	rsync -P $BUILD_DIRECTORY/binary.iso 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.iso
     fi
