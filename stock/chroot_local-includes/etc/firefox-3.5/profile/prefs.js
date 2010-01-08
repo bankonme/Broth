@@ -11,4 +11,4 @@
 
 user_pref("browser.migration.version", 1);
 user_pref("browser.startup.homepage", "http://puredyne.goto10.org");
-user_pref("browser.startup.homepage_override.mstone", "rv:1.9.1.5");
+user_pref("browser.startup.homepage_override.mstone", "rv:1.9.1.7");

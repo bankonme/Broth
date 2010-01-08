@@ -24,6 +24,7 @@ pd-container
 pd-creb
 pd-cxc
 pd-ext13
+pd-flext
 pd-gem
 pd-gem2pdp
 pd-ggee
@@ -34,6 +35,7 @@ pd-libstdcpp
 pd-lua
 pd-lyonpotpourri
 pd-mrpeach
+pd-msd
 pd-ogg
 pd-opencv-data
 pd-oscbank
@@ -42,6 +44,7 @@ pd-pdp-opencv
 pd-pidip
 pd-pix-opencv
 pd-unauthorized
+pd-xsample
 pd-zexy
 
 
