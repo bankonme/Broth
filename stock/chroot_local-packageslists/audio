@@ -87,7 +87,7 @@ csound-gui
 python-csound
 python-csoundac
 mmm-mode
-#csoundx
+csoundx
 
 # ardour
 ardour-i686
