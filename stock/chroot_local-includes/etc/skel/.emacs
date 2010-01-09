@@ -44,7 +44,7 @@
   ;; If there is more than one, they won't work right.
  )
 
-## hack to make the cursor work normally in w3m-mode - thanks martin :)
+;## hack to make the cursor work normally in w3m-mode - thanks martin :)
 (eval-after-load "w3m"
  '(progn
  (define-key w3m-mode-map [left] 'backward-char)
