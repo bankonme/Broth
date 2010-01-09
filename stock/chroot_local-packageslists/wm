@@ -13,6 +13,8 @@ libgl1-mesa-dri
 
 # prettyfication
 tango-icon-theme
+# note: tango doesn't actually include all the icons needed, gnome supplies the remainder
+gnome-icon-theme
 gtk2-engines
 
 # default
