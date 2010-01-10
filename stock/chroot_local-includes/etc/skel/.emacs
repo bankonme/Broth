@@ -1,3 +1,6 @@
+;#####csound emacs mode#####
+(require 'stef-elisp)
+
 ;#####supercollider emacs mode#####
 
 (require 'sclang)
