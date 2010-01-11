@@ -14,4 +14,6 @@ rm -f /root/preseed
 
 DEBIAN_FRONTEND="dialog" apt-get install --yes sun-java6-bin \
 	sun-java6-fonts sun-java6-jre sun-java6-plugin \
-	processing arduino swingosc
+	processing processing-gsvideo arduino swingosc \
+	processing-promidi processing-oscp5 processing-controlp5 \
+	processing-arduino processing-opencv processing-supercollider
