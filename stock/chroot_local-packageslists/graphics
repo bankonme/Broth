@@ -19,7 +19,7 @@ graphviz
 imagemagick
 
 # RT
-#fluxus
+fluxus
 
 # need Java so it's installed in the hook
 #puredyne-processing
