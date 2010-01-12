@@ -27,7 +27,7 @@
 # global variables
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
-PUREDYNE_LINUX="linux-image-2.6.31-5"
+PUREDYNE_LINUX="linux"
 #PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
 
@@ -71,7 +71,7 @@ lh config \
     --username "lintian" \
     --language "en" \
     --linux-packages $PUREDYNE_LINUX \
-    --linux-flavours "pure" \
+    --linux-flavours "rt" \
     --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
