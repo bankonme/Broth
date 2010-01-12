@@ -29,6 +29,7 @@ pd-gem
 pd-gem2pdp
 pd-ggee
 pd-gridflow
+pd-hid
 pd-iemlib
 pd-iemmatrix
 pd-libstdcpp
