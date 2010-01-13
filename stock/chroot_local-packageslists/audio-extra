@@ -10,6 +10,7 @@ freqtweak
 ecamegapedal
 
 # Hydrogen
+hydrogen
 hydrogen-drumkits
 
 # MIDI
@@ -40,3 +41,5 @@ vorbis-tools
 boxar
 din
 tuxguitar
+
+abcm2ps
