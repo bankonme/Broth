@@ -18,13 +18,8 @@ kino
 avidemux
 transcode
 mencoder
-x264
 
 gjacktransport
-
-# DVD authoring
-dvdauthor
-dvdstyler
 
 # Temp fix - see #665
 luvcview
@@ -33,7 +28,5 @@ xawtv-plugins
 vgrabbj
 
 freej
-
-subtitleeditor
 
 #processing

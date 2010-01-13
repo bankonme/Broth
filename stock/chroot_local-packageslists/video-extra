@@ -5,6 +5,13 @@ dirac
 mkvtoolnix
 ogmtools
 swftools
+x264
+
+# DVD authoring
+dvdauthor
+dvdstyler
+
+subtitleeditor
 
 # DVD menu 
 videolink
