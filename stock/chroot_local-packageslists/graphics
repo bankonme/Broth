@@ -1,19 +1,10 @@
 # 3D, Vector and Raster application
 
-# digital photo
-ufraw
-rawstudio
-dcraw
-
 # Raster
 gimp
-gimp-ufraw
 
 # Vector
 inkscape
-
-# Viz
-graphviz
 
 # CLI
 imagemagick

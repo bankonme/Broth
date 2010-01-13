@@ -8,6 +8,15 @@ grafx2
 
 synfigstudio
 
+# digital photo
+ufraw
+rawstudio
+dcraw
+gimp-ufraw
+
+# Viz
+graphviz
+
 # Publishing
 scribus-ng
 fontforge
