@@ -2,9 +2,12 @@
 #include <audio-extra>
 #include <desktop-extra>
 #include <dev-extra>
+#include <net-extra>
 #include <system-extra>
 #include <graphics-extra>
+#include <hardware-extra>
 #include <radio-extra>
 #include <video-extra>
 #include <music-extra>
 #include <fonts-extra>
+#include <streaming-extra>
