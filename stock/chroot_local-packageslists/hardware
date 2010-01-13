@@ -1,6 +1,0 @@
-kicad
-kicad-doc-en
-
-# arduino is installed via the Java hook, until we find a way to make
-# 100% depends on openjdk ...
-#arduino
