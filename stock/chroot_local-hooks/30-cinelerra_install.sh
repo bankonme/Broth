@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+# broth/stock/chroot_local-hooks/30-cinelerra_install.sh
 # Shitty hack to trick dpkg to install cinelerra from the akirad repos in the chroot.
 
 # dependencies
