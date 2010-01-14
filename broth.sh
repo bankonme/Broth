@@ -85,6 +85,9 @@ lh config \
 
 stock() {
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
+    ## TEMP FIX SEE #504528 ---------
+    mv $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS.list
+    ## ------------------------------
 }
 
 broken_config() {
