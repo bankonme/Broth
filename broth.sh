@@ -30,13 +30,14 @@ BROTH_DIRECTORY=`pwd`
 PUREDYNE_LINUX="linux"
 #PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
+PARENTBUILD_DIRECTORY="/home/$BUILDER"
+BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 
 # live builder specific settings
 serverconf() {
     if [ `cat /etc/hostname` == "builder" ]; then
         echo "bob the builder mode"
         PUREDYNE_VERSION="Puredyne carrot&coriander"
-        BUILD_DIRECTORY="/home/$BUILDER/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
@@ -46,7 +47,6 @@ serverconf() {
     else
         echo "remix/test mode"
         PUREDYNE_VERSION="Puredyne remix"
-        BUILD_DIRECTORY="/home/$BUILDER/puredyne-build-$PUREDYNE_ARCH"
         BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
@@ -127,13 +127,14 @@ usage: $0 options
    -h      Show this message
    -o      Choose output (CD or DVD or CUSTOM)
    -a      Choose target architecture (EXPERIMENTAL!)
+   -p      Parent build directory (default:$PARENTBUILD_DIRECTORY)
 EOF
 }
 
 if [ "$1" == "" ]; then
     usage ; exit 1
 else
-    while getopts "ho:a:" OPTION ; do
+    while getopts "ho:a:p:" OPTION ; do
 	case $OPTION in
 	    h)  usage ; exit 1;;
             o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
@@ -152,6 +153,10 @@ else
                     echo "architecture unknown, kthxbye"; exit -1
                 fi
                 ;;
+	    p)  PARENTBUILD_DIRECTORY=$OPTARG 
+		BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
+		echo "parent build directory set to $PARENTBUILD_DIRECTORY"
+		;;
 	    *) echo "Not recognized argument, kthxbye"; exit -1 ;;
 	esac
     done
