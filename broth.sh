@@ -85,6 +85,8 @@ lh config \
 
 stock() {
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
+    mv $BUILD_DIRECTORY/config/chroot_local-hooks-common $BUILD_DIRECTORY/config/chroot_local-hooks
+    cp $BUILD_DIRECTORY/config/chroot_local-hooks-$PACKAGES_LISTS/* $BUILD_DIRECTORY/config/chroot_local-hooks/
     ## TEMP FIX SEE #504528 ---------
     mv $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS.list
     ## ------------------------------
