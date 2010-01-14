@@ -85,6 +85,7 @@ lh config \
 
 stock() {
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
+    rm -rf $BUILD_DIRECTORY/config/chroot_local-hooks
     mv $BUILD_DIRECTORY/config/chroot_local-hooks-common $BUILD_DIRECTORY/config/chroot_local-hooks
     if [ -d $BUILD_DIRECTORY/config/chroot_local-hooks-$PACKAGES_LISTS ]
     then
