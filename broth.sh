@@ -69,7 +69,7 @@ lh config \
     --syslinux-timeout "10" \
     --syslinux-menu "true" \
     --username "lintian" \
-    --language "en" \
+    --language "en_US.UTF-8" \
     --linux-packages $PUREDYNE_LINUX \
     --linux-flavours "rt" \
     --archive-areas "main restricted universe multiverse" \
