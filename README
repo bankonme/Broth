@@ -21,13 +21,10 @@ live-helper 1.0.5 as found in Ubuntu Karmic won't work, unless you replace 'lh f
 debootstrap-1.0.20 or higher
 
 
-usage
+Usage
 
 ./broth -o CD|DVD
 
 and have a few coffees and loads of biscuits. It takes a long time, esp. the first time.
 
 
-* note 
-for usb-boot edit stock/binary_local-hooks/99-fix_initrd.sh and change the INTRD variable 
-accordingly.
