@@ -1,0 +1,22 @@
+0fGETTING HELP07                                                                  09F907
+
+
+If you have problems running this CD/DVD don't you worry! 
+We will try our best to help. Good starting places for help are 
+the puredyne mailing list and irc which can be found on our website : 
+     
+http://puredyne.goto10.org/support.html
+
+See also the project page at https://launchpad.net/puredyne-live/
+
+
+
+
+
+
+
+
+
+
+
+Press F1control and F then 1 for the help index, or ENTER to 
