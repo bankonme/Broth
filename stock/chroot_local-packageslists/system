@@ -39,6 +39,7 @@ sysfsutils
 dvd+rw-tools
 
 module-assistant
+jockey-gtk
 
 lilo
 syslinux
