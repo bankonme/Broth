@@ -123,6 +123,11 @@ usage()
 {
 cat << EOF
 BROTH - The mother of all soups
+Copyright (C) 2008-2010  Puredyne Team
+This program is free software: you can redistribute it and/or modify                                                 
+it under the terms of the GNU Affero General Public License as                                                       
+published by the Free Software Foundation, version 3 of the license.
+
 usage: $0 options
    -h      Show this message
    -o      Choose output (CD or DVD or CUSTOM)
