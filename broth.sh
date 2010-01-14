@@ -146,7 +146,6 @@ else
 		if [ $OPTARG == "CD" -o $OPTARG == "DVD" -o $OPTARG == "CUSTOM" ]; then
                     PACKAGES_LISTS="puredyne-$OPTARG"
 		    echo "starting building of $PACKAGES_LISTS"
-		    #make_soup
 		else
                     echo "profile unknown, kthxbye"; exit -1
 		fi
