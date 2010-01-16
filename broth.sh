@@ -161,6 +161,7 @@ else
 		;;
             a)  if [ $OPTARG == "i386" -o $OPTARG == "amd64" -o $OPTARG == "lpia" ]; then
                     PUREDYNE_ARCH=$OPTARG
+                    BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
                     echo "building puredyne for $OPTARG"
                 else
                     echo "architecture unknown, kthxbye"; exit -1
