@@ -5,6 +5,8 @@ Puredyne is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty
 of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+More info: http://puredyne.goto10.org/
+
 Puredyne is based on Ubuntu.
 
 Ubuntu is Copyright (C) 2004-2010 Canonical Ltd., and
@@ -18,4 +20,12 @@ described in the corresponding file
 
 Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
+
+More info: http://www.ubuntu.com/
+
+Puredyne is built using Debian live-helper.
+
+This system was built with Debian live-helper-2.0~a3-1.
+
+More info: http://debian-live.alioth.debian.org/
 
