@@ -59,5 +59,8 @@
 ;; (setq truncate-lines t)
  ))
 
-
+;## make C-c copy, C-v paste etc...
+(cua-mode t)
+(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
