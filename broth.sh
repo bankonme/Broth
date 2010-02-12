@@ -126,6 +126,11 @@ make_soup() {
     broken_config
     sudo lh build  2>&1| tee broth.log
 #    serve
+    if [ -e "$BUILD_DIRECTORY/binary.iso" ]; then
+        echo "soup is ready!"
+    else
+        echo "$0 failed? $BUILD_DIRECTORY/binary.iso not found"
+    fi
 }
 
 usage()
