@@ -1,3 +1,11 @@
+;##### default color theme #####
+(require 'color-theme)
+(load-file "~/.emacs.d/color-theme-bluish.el")
+(color-theme-bluish)
+
+;##### extension for block error messages ####
+(load-file "~/.emacs.d/ext-scel.el")
+
 ;#####csound emacs mode#####
 (require 'stef-elisp)
 
