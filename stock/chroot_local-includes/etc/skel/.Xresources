@@ -12,3 +12,10 @@ XTerm*font:             -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso10646-*
 XTerm*boldMode:         false
 XTerm*saveLines:        1000
 XTerm*translations:     #override : select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+XTerm*TermName:     	xterm-256color
+
+UXTerm*TermName:    	xterm-256color
+
+Emacs*font:             -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso10646-*
+Emacs*geometry:         96x60
+
