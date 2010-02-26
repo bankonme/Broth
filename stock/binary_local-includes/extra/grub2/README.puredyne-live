@@ -1,0 +1,55 @@
+== Grub 2 configuration ==
+
+
+= Quick Steps: =
+
+1) edit extra/grub2/99_puredyne-live
+2) put extra/grub2/99_puredyne-live in /etc/grub.d/
+3) run 'sudo update-grub'
+
+
+= Slow Steps: =
+
+1) edit extra/grub2/99_puredyne-live and change this line to reflect where your 
+   actual live/ folder lives:
+
+	set root=(hd0,2)
+
+   you can find out which value to put for (hd0,2) like this: 
+
+	         partition              linux device name      	grub name 
+        x. partition on first hdd	/dev/sdaX or /dev/hdaX	(hd0,x)
+	x. partition on second hdd	/dev/sdbX or /dev/hdbX	(hd1,x)
+	....				....			....
+	1. partition on x. hdd		/dev/sdX1 or /dev/hdX1	(hdx,1)
+	2. partition on x. hdd		/dev/sdX2 or /dev/hdX2	(hdx,2)
+
+   keep in mind that the numbering of extended partition always starts at value
+   5, regardless of how many primary partitions are on the drive before the 
+   extended one.
+
+   next, edit the following line and add the uuid of your root partition: 
+
+	search --no-floppy --fs-uuid --set 3f59651f-639f-4465-9c1c-86c49e427249
+
+   to find out which uuid is the right one, use the blkid command in a 
+   terminal:
+
+	sudo blkid
+
+   this will show you all blkid entries to all hard disks on your machine. on
+   my machine it looks like this:
+
+	/dev/sda1: UUID="a0672431-9b65-47bc-ab0e-40cd88f39636" TYPE="ext4" 
+	/dev/sda2: TYPE="swap" 
+	/dev/sda3: UUID="414708bd-1886-43c5-9136-7e3ccacf0702" TYPE="ext4" 
+	/dev/ramzswap0: TYPE="swap" 
+
+2) open a terminal or file-manager window and copy this file to /etc/grub.d/
+   of your existing gnu/linux install. 
+
+3) in a terminal, run the following to make the new puredyn entry known to grub:
+
+	sudo update-grub
+
+4) reboot your computer
