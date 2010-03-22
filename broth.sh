@@ -79,7 +79,6 @@ lh config \
     --initramfs "live-initramfs" \
     --apt "aptitude" \
     --apt-recommends "false" \
-    --apt-secure "false" \
     --keyring-packages "ubuntu-keyring medibuntu-keyring akirad-keyring-and-mirrors puredyne-keyring"
 }
 
