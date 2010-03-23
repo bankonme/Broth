@@ -1,3 +1,7 @@
 # IRC
 xchat
 
+# fuse based stuff
+sshfs 
+curlftpfs
+smbfs
