@@ -53,10 +53,9 @@ qmidiarp
 qmidiroute
 qmidicontrol
 
+# 9.11 additions
 wsola
-
 freepats
-
 phasex
-
 jcgui
+autotalent
