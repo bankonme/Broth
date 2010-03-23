@@ -6,7 +6,8 @@
 # #include <xfce>
 
 # base system
-slim
+#slim !!!has a bug with pam that prevents jackd from assuming RT-prios!!!
+gdm
 xorg
 libgl1-mesa-dri
 #virtualbox-ose-guest-x11 #makes life easier when testing in vbox!
