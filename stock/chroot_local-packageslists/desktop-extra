@@ -19,3 +19,4 @@ grsync
 # xflock4 (xfce screen lock tool) needs this:
 xlockmore
 
+vim-gnome
