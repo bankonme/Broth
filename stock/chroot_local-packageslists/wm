@@ -6,7 +6,6 @@
 # #include <xfce>
 
 # base system
-#slim !!!has a bug with pam that prevents jackd from assuming RT-prios!!!
 gdm
 xorg
 libgl1-mesa-dri
