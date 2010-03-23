@@ -6,7 +6,7 @@
 # #include <xfce>
 
 # base system
-gdm
+slim
 xorg
 libgl1-mesa-dri
 #virtualbox-ose-guest-x11 #makes life easier when testing in vbox!
