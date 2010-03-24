@@ -12,8 +12,6 @@ export RPS1=$'%{\e[37m%}%{\e[1;30m%}%{\e[7m%} %M %{\e[0m%}'
 else
 export RPS1=$'%{\e[37m%}%{\e[1;30m%} %M %{\e[0m%}'
 fi
-# colors
-eval `dircolors -b ~/.dircolors`
 
 # completion --------------------------------------------------------
 zstyle ':completion:*' menu select=1  # completion menu
