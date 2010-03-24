@@ -4,11 +4,13 @@
 # including the live user because this one is created at boot time.
 # It also sets default extra groups for new users.
 
+TARGETFILE="/etc/adduser.conf"
+
 # We want Zsh!
-sed -i 's/DSHELL=\/bin\/bash/DSHELL=\/bin\/zsh/g' /etc/adduser.conf
+sed -i 's|DSHELL=/bin/bash|DSHELL=/bin/zsh|g' "$TARGETFILE"
 
 # We want awesome groups!
-cat >> /etc/adduser.conf <<EOF
+cat >> "$TARGETFILE" <<EOF
 EXTRA_GROUPS="dialout cdrom disk floppy plugdev netdev audio video users games"
 ADD_EXTRA_GROUPS=1
 EOF

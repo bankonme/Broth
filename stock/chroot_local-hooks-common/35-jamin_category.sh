@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ -e "/usr/share/applications/jamin.desktop" ]
 then
 

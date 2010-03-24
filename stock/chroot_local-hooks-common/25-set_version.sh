@@ -6,7 +6,7 @@
 
 DATE="/bin/date"
 
-VERSION=`${DATE} +%Y%m%d`
+VERSION=$("${DATE}" +%Y%m%d)
 
 echo "Setting VERSION file."
-echo ${VERSION} > /etc/VERSION
+echo "${VERSION}" > /etc/VERSION
