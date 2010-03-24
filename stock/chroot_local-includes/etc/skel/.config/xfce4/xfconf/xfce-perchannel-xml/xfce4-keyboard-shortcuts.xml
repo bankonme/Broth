@@ -16,8 +16,8 @@
       <property name="XF86AudioLowerVolume" type="string" value="aumix -v-10"/>
       <property name="XF86AudioRaiseVolume" type="string" value="aumix -v+10"/>
       <property name="&lt;Control&gt;Escape" type="string" value="xfce4-popup-menu"/>
-      <property name="&lt;Control&gt;&lt;Meta&gt;Return" type="string" value="xterm"/>
-      <property name="&lt;Control&gt;&lt;Alt&gt;Return" type="string" value="xterm"/>
+      <property name="&lt;Control&gt;&lt;Meta&gt;Return" type="string" value="urxvtc"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;Return" type="string" value="urxvtc"/>
       <property name="&lt;Meta&gt;F1" type="string" value="xfhelp4"/>
       <property name="&lt;Alt&gt;F1" type="string" value="xfhelp4"/>
       <property name="&lt;Control&gt;&lt;Meta&gt;Delete" type="string" value="xflock4"/>

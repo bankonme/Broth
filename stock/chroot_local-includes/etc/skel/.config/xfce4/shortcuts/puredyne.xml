@@ -4,7 +4,7 @@
 	<shortcut command="aumix -v-10" keys="XF86AudioLowerVolume"/>
 	<shortcut command="aumix -v+10" keys="XF86AudioRaiseVolume"/>
 	<shortcut command="xfce4-popup-menu" keys="Control+Escape"/>
-	<shortcut command="xterm" keys="Control+Alt+Return"/>
+	<shortcut command="urxvtc" keys="Control+Alt+Return"/>
 	<shortcut command="xfhelp4" keys="Alt+F1"/>
 	<shortcut command="xflock4" keys="Control+Alt+Delete"/>
 	<shortcut command="xfrun4" keys="Alt+F2"/>
