@@ -21,6 +21,7 @@ gtk2-engines
 xfce4
 xfce4-xfapplet-plugin
 xfce4-xkb-plugin
+xfce4-places-plugin
 # not found?
 #notification-daemon-xfce
 xfce4-taskmanager
