@@ -30,3 +30,7 @@ python-liblo
 
 # Misc
 unarchive
+
+# supercollider emacs mode uses w3m-el for documentation browsing; normally a 'recommends' therefore we missed it
+w3m-el
+
