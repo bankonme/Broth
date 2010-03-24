@@ -59,7 +59,7 @@ lh config \
     --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
     --binary-indices "true" \
-    --bootappend-live "persistent automatic-ubiquity preseed/file=/live/image/pure.seed quickreboot" \
+    --bootappend-live "persistent preseed/file=/live/image/pure.seed quickreboot" \
     --hostname "puredyne" \
     --iso-application "Puredyne" \
     --iso-preparer "live-helper $VERSION" \
