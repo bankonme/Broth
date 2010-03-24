@@ -4,6 +4,8 @@ zsh
 
 vim 
 
+synaptic
+
 #needed for scvim
 vim-addon-manager
 unhtml 		
