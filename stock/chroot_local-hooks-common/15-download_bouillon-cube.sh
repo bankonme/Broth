@@ -3,5 +3,5 @@
 # This is needed until bouillon cube is mature enough to be packaged properly
 
 bzr co lp:bouilloncube
-mv bouilloncube/sh/make-live-device.sh /usr/sbin
+mv bouilloncube/sh/grub2/make-live-device.sh /usr/sbin
 rm -rf bouilloncube
