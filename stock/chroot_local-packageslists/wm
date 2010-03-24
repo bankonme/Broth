@@ -31,5 +31,6 @@ gnome-alsamixer
 evilwm
 
 # X tools
+rxvt-unicode
 grandr
 mesa-utils
