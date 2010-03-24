@@ -19,3 +19,55 @@ UXTerm*TermName:    	xterm-256color
 Emacs*font:             -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso10646-*
 Emacs*geometry:         96x60
 
+URxvt*reverseVideo:     true
+URxvt*jumpScroll:       true
+URxvt.scrollBar:        false
+URxvt.visualBell:       false
+URxvt*scrollWithBuffer: true
+URxvt*saveLines:        1000
+URxvt*internalBorder:   2
+URxvt*externalBorder:   0
+URxvt*borderLess:       false
+URxvt*depth: 32
+URxvt*CursorColor:      #AFD700
+URxvt*font: -*-terminus-medium-r-normal-*-12-*-72-72-*-*-*-16
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      firefox
+URxvt.matcher.button:   2
+URxvt*matcher.pattern.1: \\b(mailto|http|https|ftp|file):[/]*[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt*matcher.pattern.2: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+
+!*background:        #262626
+*foreground:        #262626
+!*foreground:        #686868
+*background:        #686868
+
+!black
+*color0:    #1B1D1E
+*color8:    #505354
+!*color0:     #262729
+!*color8:     #554444
+
+!red
+*color1:    #F92672
+*color9:    #FF669D
+!green
+*color2:    #A6E22E
+*color10:   #BEED5F
+!yellow
+*color3:    #FD971F
+*color11:   #E6DB74
+!blue
+!*color4:    #66D9EF
+*color4:    #52B2C4
+*color12:   #66D9EF
+!magenta
+*color5:    #9E6FFE
+*color13:   #9E6FFE
+!cyan
+*color6:    #5E7175
+*color14:   #A3BABF
+!white
+*color7:    #CCCCC6
+*color15:   #F8F8F2
+
