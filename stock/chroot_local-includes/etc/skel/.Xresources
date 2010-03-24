@@ -37,8 +37,8 @@ URxvt.matcher.button:   2
 URxvt*matcher.pattern.1: \\b(mailto|http|https|ftp|file):[/]*[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt*matcher.pattern.2: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
-*foreground:        #262626
-*background:        #AAAAAA
+URxvt*foreground:        #262626
+URxvt*background:        #AAAAAA
 
 !black
 *color0:    #1B1D1E
