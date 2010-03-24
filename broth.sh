@@ -65,7 +65,7 @@ lh config \
     --iso-preparer "live-helper $VERSION" \
     --iso-publisher "Puredyne team; http://puredyne.goto10.org; puredyne-team@goto10.org" \
     --iso-volume $PUREDYNE_VERSION \
-    --syslinux-splash "config/binary_syslinux/splash.rle" \
+    --syslinux-splash "config/binary_syslinux/splash.png" \
     --syslinux-timeout "10" \
     --syslinux-menu "true" \
     --username "lintian" \
