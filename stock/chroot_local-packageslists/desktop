@@ -17,6 +17,7 @@ audacious-plugins-extra
 brasero
 
 gtk-recordmydesktop
+recordmydesktop=0.3.8.1-0ubuntu2~ppa1~karmic1
 
 bzip2
 unzip
