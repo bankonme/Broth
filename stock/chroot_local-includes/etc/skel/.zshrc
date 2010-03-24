@@ -73,3 +73,10 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # -------------------------------------------------------------------
 autoload -U compinit 
 compinit
+
+# update title bar
+function settitle { print -Pn "\e]2;%n@%m: %~\a" }
+function chpwd { settitle }
+function precmd { settitle }
+
+
