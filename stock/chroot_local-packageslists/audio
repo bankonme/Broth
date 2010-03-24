@@ -35,6 +35,10 @@ pd-iemmatrix
 pd-libstdcpp
 pd-lua
 pd-lyonpotpourri
+pd-mapping
+pd-markex
+pd-mjlib
+pd-motex
 pd-mrpeach
 pd-msd
 pd-ogg
@@ -44,14 +48,15 @@ pd-pdp
 pd-pdp-opencv
 pd-pidip
 pd-pix-opencv
+pd-pool
+pd-py
+pd-readanysf
+pd-sigpack
+pd-smlib
 pd-unauthorized
+pd-windowing
 pd-xsample
 pd-zexy
-
-
-# Supercollider
-# Reminder: sc is installed with a hook. see #534
-#puredyne-supercollider
 
 # ladspa
 csladspa
