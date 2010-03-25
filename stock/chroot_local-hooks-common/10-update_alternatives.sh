@@ -5,4 +5,4 @@
 update-alternatives --set pager /usr/bin/most
 
 # use urxvt daemon
-update-atlernatives --set x-terminal-emulator /usr/bin/urxvtcd
+update-alternatives --set x-terminal-emulator /usr/bin/urxvtcd
