@@ -1,2 +1,1 @@
-TerminalEmulator=urxvtc
-
+TerminalEmulator=debian-x-terminal-emulator
