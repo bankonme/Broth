@@ -1,7 +1,7 @@
 kdenlive
 
-# hoping this will work without hook:
-cinelerracv
+# This MUST be installed via a hook - read hook's comment 
+#cinelerracv
 
 #codecs and related
 dirac
