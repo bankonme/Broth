@@ -18,6 +18,7 @@ gecko-mediaplayer
 # Connectivity
 network-manager
 network-manager-gnome
+modemmanager
 wireless-tools
 pppoeconf
 
