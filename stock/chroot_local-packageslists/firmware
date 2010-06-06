@@ -1,10 +1,19 @@
-# firmware packages
+# Firmware related packages
 
 # EZ-USB related
 fxload
 midisport-firmware
 
 #kernel firmware
-
 linux-firmware-nonfree
 linux-firmware
+
+# Wireless
+atmel-firmware
+libertas-firmware
+prism2-usb-firmware-installer
+b43-fwcutter
+
+# Audio
+alsa-firmware
+
