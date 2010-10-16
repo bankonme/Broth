@@ -19,7 +19,7 @@ avidemux
 transcode
 mencoder
 
-gjacktransport
+#gjacktransport
 
 # Temp fix - see #665
 luvcview

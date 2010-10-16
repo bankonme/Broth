@@ -12,7 +12,7 @@ xfonts-terminus
 
 audacious
 audacious-plugins
-audacious-plugins-extra
+#audacious-plugins-extra
 
 brasero
 

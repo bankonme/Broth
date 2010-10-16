@@ -10,7 +10,7 @@ libasound2-plugins
 jackd
 qjackctl
 jackbytes
-gjacktransport
+#gjacktransport
 jack-rack
 jack-tools
 japa
