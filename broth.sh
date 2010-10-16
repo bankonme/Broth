@@ -54,7 +54,7 @@ serverconf() {
 }
 
 brothconfig() {
-lh config \
+lb config \
     $BUILD_MIRRORS \
     --mirror-binary "http://gb.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
@@ -71,15 +71,15 @@ lh config \
     --username "lintian" \
     --language "en_US.UTF-8" \
     --linux-packages $PUREDYNE_LINUX \
-    --linux-flavours "rt" \
+    --linux-flavours "generic" \
     --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
     --distribution "maverick" \
     --initramfs "live-initramfs" \
-    --apt "aptitude" \
+    --apt "apt" \
     --apt-recommends "false" \
-    --keyring-packages "ubuntu-keyring medibuntu-keyring akirad-keyring-and-mirrors puredyne-keyring"
+    --keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
 }
 
 stock() {
@@ -96,7 +96,7 @@ stock() {
 }
 
 broken_config() {
-# The following arguments are not accepted by lh config ATM
+# The following arguments are not accepted by lb config ATM
     echo "_DEBUG=\"true\"" >> $BUILD_DIRECTORY/config/common
     echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
 #    echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
@@ -117,13 +117,13 @@ make_soup() {
 	cd $BUILD_DIRECTORY
     else
         cd $BUILD_DIRECTORY
-        sudo lh clean 
+        sudo lb clean 
         rm -rf $BUILD_DIRECTORY/config
     fi
     brothconfig
     stock
     broken_config
-    sudo lh build  2>&1| tee broth.log
+    sudo lb build  2>&1| tee broth.log
 #    serve
     if [ -e "$BUILD_DIRECTORY/binary.iso" ]; then
         echo "soup is ready!"
