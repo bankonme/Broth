@@ -3,8 +3,8 @@ insmod ext2
 set root=(hd0,3)
 search --fs-uuid --set d3afdd1-045a-490f-b7ba-86c0c2d8c500
        loopback loop /path/to/puredyne.iso
-       linux (loop)/live/vmlinuz boot=live iso-scan/filename=/puredyne.iso quiet splash -- 
-       initrd (loop)/live/initrd.gz
+       linux (loop)/live/vmlinuz1 boot=live iso-scan/filename=/puredyne.iso quiet splash -- 
+       initrd (loop)/live/initrd1.gz
 }
 
 
