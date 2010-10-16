@@ -1,0 +1,3 @@
+deb http://gb.archive.ubuntu.com/ubuntu/ maverick-updates restricted main multiverse universe
+deb-src http://gb.archive.ubuntu.com/ubuntu/ maverick-updates restricted main multiverse universe
+

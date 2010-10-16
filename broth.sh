@@ -38,8 +38,8 @@ serverconf() {
     if [ `cat /etc/hostname` == "builder" ]; then
         echo "bob the builder mode"
         PUREDYNE_VERSION="Puredyne carrot&coriander"
-        BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
-        --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
+        BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
+        --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
 #        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
 #        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
@@ -47,8 +47,8 @@ serverconf() {
     else
         echo "remix/test mode"
         PUREDYNE_VERSION="Puredyne remix"
-        BUILD_MIRRORS="--mirror-bootstrap \"http://uk.archive.ubuntu.com/ubuntu\" \
-        --mirror-chroot \"http://uk.archive.ubuntu.com/ubuntu\" \
+        BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
+        --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
     fi
 }
@@ -56,7 +56,7 @@ serverconf() {
 brothconfig() {
 lh config \
     $BUILD_MIRRORS \
-    --mirror-binary "http://uk.archive.ubuntu.com/ubuntu" \
+    --mirror-binary "http://gb.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
     --binary-indices "true" \
     --bootappend-live "persistent preseed/file=/live/image/pure.seed quickreboot" \
@@ -75,7 +75,7 @@ lh config \
     --archive-areas "main restricted universe multiverse" \
     --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
-    --distribution "karmic" \
+    --distribution "maverick" \
     --initramfs "live-initramfs" \
     --apt "aptitude" \
     --apt-recommends "false" \

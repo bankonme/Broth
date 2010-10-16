@@ -1,4 +1,4 @@
 ## Medibuntu packages
 ## Please report any bug on https://bugs.launchpad.net/medibuntu/
-deb http://packages.medibuntu.org/ karmic free non-free 
-deb-src http://packages.medibuntu.org/ karmic free non-free
+deb http://packages.medibuntu.org/ maverick free non-free 
+deb-src http://packages.medibuntu.org/ maverick free non-free
