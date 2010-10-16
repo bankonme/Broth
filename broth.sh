@@ -37,7 +37,7 @@ BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 serverconf() {
     if [ `cat /etc/hostname` == "builder" ]; then
         echo "bob the builder mode"
-        PUREDYNE_VERSION="Puredyne carrot&coriander"
+        PUREDYNE_VERSION="Puredyne gazpacho"
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
@@ -63,7 +63,7 @@ lb config \
     --hostname "puredyne" \
     --iso-application "Puredyne" \
     --iso-preparer "live-helper $VERSION" \
-    --iso-publisher "Puredyne team; http://puredyne.goto10.org; puredyne-team@goto10.org" \
+    --iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
     --iso-volume $PUREDYNE_VERSION \
     --syslinux-splash "config/binary_syslinux/splash.png" \
     --syslinux-timeout "10" \
