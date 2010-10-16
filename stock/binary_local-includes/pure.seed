@@ -18,8 +18,8 @@ d-i apt-setup/local1/repository string http://packages.medibuntu.org/ maverick f
 d-i apt-setup/local1/comment string medibuntu repositories
 d-i apt-setup/local1/source boolean true
 
-d-i apt-setup/local2/repository string http://akirad.cinelerra.org akirad-maverick main
-d-i apt-setup/local2/comment string akirad cinelerra
-d-i apt-setup/local2/source boolean true
+#d-i apt-setup/local2/repository string http://akirad.cinelerra.org akirad-maverick main
+#d-i apt-setup/local2/comment string akirad cinelerra
+#d-i apt-setup/local2/source boolean true
 
 
