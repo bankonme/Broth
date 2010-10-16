@@ -1,7 +1,7 @@
 # Video packages
 
 # multimedia players
-mplayer-nogui
+mplayer
 vlc
 vlc-plugin-jack
 
