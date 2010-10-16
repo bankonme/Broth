@@ -9,7 +9,7 @@ linux-firmware-nonfree
 linux-firmware
 
 # Wireless
-atmel-firmware
+#atmel-firmware
 libertas-firmware
 prism2-usb-firmware-installer
 b43-fwcutter
