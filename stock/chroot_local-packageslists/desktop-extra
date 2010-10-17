@@ -1,7 +1,7 @@
 # Desktop non-CD packages
 
 moc
-xmp-audacious
+#xmp-audacious
 
 # needed for f-spot to burn images to cd
 # rob needs to check if this is still needed
