@@ -4,7 +4,7 @@ liquidsoap
 
 gstreamer0.10-plugins-base-apps 
 
-gstreamer0.10-ffmpeg-full
+gstreamer0.10-ffmpeg
 gstreamer0.10-lame
 gstreamer0.10-audiosink
 
