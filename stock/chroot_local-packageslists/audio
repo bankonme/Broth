@@ -22,11 +22,14 @@ pd-abstractions
 pd-arraysize
 pd-arduino
 pd-bassemu
+pd-beatpipe
 pd-container
+pd-comport
 pd-creb
 pd-cxc
 pd-ext13
 pd-flext
+pd-freeverb
 pd-gem
 pd-gem2pdp
 pd-ggee
@@ -35,6 +38,7 @@ pd-hid
 pd-iemlib
 pd-iemmatrix
 pd-libstdcpp
+pd-libdir
 pd-lua
 pd-lyonpotpourri
 pd-mapping
@@ -50,12 +54,14 @@ pd-pdp
 pd-pdp-opencv
 pd-pidip
 pd-pix-opencv
+pd-plugin
 pd-pool
 pd-py
 pd-readanysf
 pd-sigpack
 pd-smlib
 pd-unauthorized
+pd-wiimote
 pd-windowing
 pd-xsample
 pd-zexy
