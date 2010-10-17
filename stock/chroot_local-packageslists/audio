@@ -19,7 +19,9 @@ jaaa
 # Pd
 puredata
 pd-abstractions
+pd-arraysize
 pd-arduino
+pd-bassemu
 pd-container
 pd-creb
 pd-cxc
