@@ -7,7 +7,7 @@ kdenlive
 dirac
 mkvtoolnix
 ogmtools
-swftools
+#swftools
 x264
 
 # DVD authoring
@@ -17,7 +17,7 @@ dvdstyler
 subtitleeditor
 
 # DVD menu 
-videolink
+#videolink
 
 #more video applications 
 
