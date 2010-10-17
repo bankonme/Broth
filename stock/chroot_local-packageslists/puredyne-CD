@@ -1,3 +1,4 @@
+#include <audio>
 #include <desktop>
 #include <dev>
 #include <firmware>
