@@ -56,6 +56,8 @@ serverconf() {
 brothconfig() {
 lb config \
     $BUILD_MIRRORS \
+    --ignore-system-defaults \
+    --verbose \
     --mirror-binary "http://gb.archive.ubuntu.com/ubuntu" \
     --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
     --binary-indices "true" \
@@ -79,6 +81,7 @@ lb config \
     --initramfs "live-boot" \
     --apt "apt" \
     --apt-recommends "false" \
+    --apt-options "--yes --force-yes" \
     --keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
 }
 
@@ -95,22 +98,20 @@ stock() {
     ## ------------------------------
 }
 
-broken_config() {
-# The following arguments are not accepted by lb config ATM
-    echo "_DEBUG=\"true\"" >> $BUILD_DIRECTORY/config/common
-    echo "APT_OPTIONS=\"--yes --force-yes\"" >> $BUILD_DIRECTORY/config/common
-#    echo "APTITUDE_OPTIONS=\"--assume-yes\"" >> $BUILD_DIRECTORY/config/common 
-}
-
-serve() {
+serve()
+{
     if [ -e $BUILD_DIRECTORY/binary.iso ]; then
-	md5sum -b $BUILD_DIRECTORY/binary.iso > binary.md5
-	rsync -P $BUILD_DIRECTORY/binary.md5 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.md5
-	rsync -P $BUILD_DIRECTORY/binary.iso 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.iso
+	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_ARCH}-dev"
+	mv $BUILD_DIRECTORY/binary.iso $BUILD_DIRECTORY/${RELEASE}.iso
+	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
+	echo "soup is ready!"
+	#rsync -P $BUILD_DIRECTORY/binary.md5 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.md5
+	#rsync -P $BUILD_DIRECTORY/binary.iso 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.iso
     fi
 }
 
-make_soup() {
+make_soup()
+{
     serverconf
     if [ ! -d $BUILD_DIRECTORY ]; then
         mkdir -p $BUILD_DIRECTORY
@@ -122,14 +123,9 @@ make_soup() {
     fi
     brothconfig
     stock
-    broken_config
+    #broken_config
     sudo lb build  2>&1| tee broth.log
-#    serve
-    if [ -e "$BUILD_DIRECTORY/binary.iso" ]; then
-        echo "soup is ready!"
-    else
-        echo "$0 failed? $BUILD_DIRECTORY/binary.iso not found"
-    fi
+    serve
 }
 
 usage()
@@ -152,7 +148,7 @@ EOF
 if [ "$1" == "" ]; then
     usage ; exit 1
 else
-    while getopts "ho:a:p:" OPTION ; do
+    while getopts "ho:a:p:t:" OPTION ; do
 	case $OPTION in
 	    h)  usage ; exit 1;;
             o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
@@ -174,6 +170,10 @@ else
 	    p)  PARENTBUILD_DIRECTORY=$OPTARG 
 		BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 		echo "parent build directory set to $PARENTBUILD_DIRECTORY"
+		;;
+	    t)  TMPFS=1
+		echo "enabling tmpfs, hit CTRL-C if you do not know what you're doing"
+		sleep 5s
 		;;
 	    *) echo "Not recognized argument, kthxbye"; exit -1 ;;
 	esac
