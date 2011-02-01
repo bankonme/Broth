@@ -28,22 +28,22 @@
 BUILDER=`whoami`
 BROTH_DIRECTORY=`pwd`
 PUREDYNE_LINUX="linux"
-#PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
+PUREDYNE_SOUP="gazpacho"
+PUREDYNE_VERSION="1010"
 PARENTBUILD_DIRECTORY="/home/$BUILDER"
 BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 
 # live builder specific settings
-serverconf() {
-    if [ `cat /etc/hostname` == "builder" ]; then
+serverconf()
+{
+    if [ `cat /etc/hostname` == "builder" ]
+    then
         echo "bob the builder mode"
         PUREDYNE_VERSION="Puredyne gazpacho"
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
-#        BUILD_MIRRORS="--mirror-bootstrap \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
-#        --mirror-chroot \"http://10.80.80.20:3142/mirror.ox.ac.uk/debian/\" \
-#        --mirror-chroot-security \"http://10.80.80.20:3142/security.debian.org/\""
     else
         echo "remix/test mode"
         PUREDYNE_VERSION="Puredyne remix"
@@ -53,39 +53,41 @@ serverconf() {
     fi
 }
 
-brothconfig() {
-lb config \
-    $BUILD_MIRRORS \
-    --ignore-system-defaults \
-    --verbose \
-    --mirror-binary "http://gb.archive.ubuntu.com/ubuntu" \
-    --mirror-binary-security "http://security.ubuntu.com/ubuntu" \
-    --binary-indices "true" \
-    --bootappend-live "persistent preseed/file=/live/image/pure.seed quickreboot" \
-    --hostname "puredyne" \
-    --iso-application "Puredyne Live" \
-    --iso-preparer "live-build VERSION" \
-    --iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
-    --iso-volume $PUREDYNE_VERSION \
-    --syslinux-splash "config/binary_syslinux/splash.png" \
-    --syslinux-timeout "10" \
-    --syslinux-menu "true" \
-    --username "lintian" \
-    --language "en_US.UTF-8" \
-    --linux-packages $PUREDYNE_LINUX \
-    --linux-flavours "generic" \
-    --archive-areas "main restricted universe multiverse" \
-    --architecture $PUREDYNE_ARCH \
-    --mode "ubuntu" \
-    --distribution "maverick" \
-    --initramfs "live-boot" \
-    --apt "apt" \
-    --apt-recommends "false" \
-    --apt-options "--yes --force-yes" \
-    --keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
+brothconfig()
+{
+    lb config \
+	$BUILD_MIRRORS \
+	--ignore-system-defaults \
+	--verbose \
+	--mirror-binary "http://gb.archive.ubuntu.com/ubuntu" \
+	--mirror-binary-security "http://security.ubuntu.com/ubuntu" \
+	--binary-indices "true" \
+	--bootappend-live "persistent preseed/file=/live/image/pure.seed quickreboot" \
+	--hostname "puredyne" \
+	--iso-application "Puredyne Live" \
+	--iso-preparer "live-build VERSION" \
+	--iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
+	--iso-volume $PUREDYNE_VERSION \
+	--syslinux-splash "config/binary_syslinux/splash.png" \
+	--syslinux-timeout "10" \
+	--syslinux-menu "true" \
+	--username "lintian" \
+	--language "en_US.UTF-8" \
+	--linux-packages $PUREDYNE_LINUX \
+	--linux-flavours "generic" \
+	--archive-areas "main restricted universe multiverse" \
+	--architecture $PUREDYNE_ARCH \
+	--mode "ubuntu" \
+	--distribution "maverick" \
+	--initramfs "live-boot" \
+	--apt "apt" \
+	--apt-recommends "false" \
+	--apt-options "--yes --force-yes" \
+	--keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
 }
 
-stock() {
+stock()
+{
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
     rm -rf $BUILD_DIRECTORY/config/chroot_local-hooks
     mv $BUILD_DIRECTORY/config/chroot_local-hooks-common $BUILD_DIRECTORY/config/chroot_local-hooks
@@ -93,27 +95,34 @@ stock() {
     then
         cp $BUILD_DIRECTORY/config/chroot_local-hooks-$PACKAGES_LISTS/* $BUILD_DIRECTORY/config/chroot_local-hooks/
     fi
-    ## TEMP FIX SEE #504528 ---------
+    
+    ## TEMP FIX SEE #504528 ----------------
+    ## COMES FROM LH 1.X SHOULD BE FIXED NOW
     mv $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS.list
-    ## ------------------------------
+    ## -------------------------------------
+
 }
 
 serve()
 {
-    if [ -e $BUILD_DIRECTORY/binary.iso ]; then
+    if [ -e $BUILD_DIRECTORY/binary.iso ]
+    then
 	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_MEDIUM}-${PUREDYNE_ARCH}-dev"
 	mv $BUILD_DIRECTORY/binary.iso $BUILD_DIRECTORY/${RELEASE}.iso
 	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
 	echo "soup is ready!"
-	#rsync -P $BUILD_DIRECTORY/binary.md5 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.md5
-	#rsync -P $BUILD_DIRECTORY/binary.iso 10.80.80.40::puredyne-iso/carrot_and_coriander/puredyne-carrot_and_coriander-dev.iso
+	rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.md5
+	rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.iso
     fi
 }
 
 make_soup()
 {
     serverconf
-    if [ ! -d $BUILD_DIRECTORY ]; then
+
+    # FIXME - move this out
+    if [ ! -d $BUILD_DIRECTORY ]
+    then
         mkdir -p $BUILD_DIRECTORY
 	cd $BUILD_DIRECTORY
     else
@@ -121,9 +130,9 @@ make_soup()
         sudo lb clean 
         rm -rf $BUILD_DIRECTORY/config
     fi
+
     brothconfig
     stock
-    #broken_config
     sudo lb build  2>&1| tee broth.log
     serve
 }
@@ -161,7 +170,7 @@ else
                     echo "profile unknown, kthxbye"; exit -1
 		fi
 		;;
-            a)  if [ $OPTARG == "i386" -o $OPTARG == "amd64" -o $OPTARG == "lpia" ]; then
+            a)  if [ $OPTARG == "i386" -o $OPTARG == "amd64" ]; then
                     PUREDYNE_ARCH=$OPTARG
                     BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
                     echo "building puredyne for $OPTARG"
@@ -173,7 +182,7 @@ else
 		BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 		echo "parent build directory set to $PARENTBUILD_DIRECTORY"
 		;;
-	    t)  TMPFS=1
+	    t)  TMPFS=1 # WIP, INACTIVE NOW
 		echo "enabling tmpfs, hit CTRL-C if you do not know what you're doing"
 		sleep 5s
 		;;
