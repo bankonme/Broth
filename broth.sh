@@ -61,8 +61,8 @@ lb config \
     --binary-indices "true" \
     --bootappend-live "persistent preseed/file=/live/image/pure.seed quickreboot" \
     --hostname "puredyne" \
-    --iso-application "Puredyne" \
-    --iso-preparer "live-helper $VERSION" \
+    --iso-application "Puredyne Live" \
+    --iso-preparer "live-build VERSION" \
     --iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
     --iso-volume $PUREDYNE_VERSION \
     --syslinux-splash "config/binary_syslinux/splash.png" \
@@ -76,7 +76,7 @@ lb config \
     --architecture $PUREDYNE_ARCH \
     --mode "ubuntu" \
     --distribution "maverick" \
-    --initramfs "live-initramfs" \
+    --initramfs "live-boot" \
     --apt "apt" \
     --apt-recommends "false" \
     --keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
