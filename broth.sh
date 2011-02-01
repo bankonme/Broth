@@ -25,8 +25,8 @@
 
 
 # global variables
-BUILDER=`whoami`
-BROTH_DIRECTORY=`pwd`
+BUILDER=$(whoami)
+BROTH_DIRECTORY=$(pwd)
 PUREDYNE_LINUX="linux"
 PUREDYNE_ARCH="i386"
 PUREDYNE_SOUP="gazpacho"
@@ -37,16 +37,15 @@ BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 # live builder specific settings
 serverconf()
 {
-    if [ `cat /etc/hostname` == "builder" ]
+    if [ $(cat /etc/hostname) == "builder" ]
     then
         echo "bob the builder mode"
-        PUREDYNE_VERSION="Puredyne gazpacho"
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
     else
         echo "remix/test mode"
-        PUREDYNE_VERSION="Puredyne remix"
+        PUREDYNE_SOUP="${PUREDYNE_SOUP} remix"
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
@@ -67,7 +66,7 @@ brothconfig()
 	--iso-application "Puredyne Live" \
 	--iso-preparer "live-build VERSION" \
 	--iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
-	--iso-volume $PUREDYNE_VERSION \
+	--iso-volume "Puredyne ${PUREDYNE_SOUP}" \
 	--syslinux-splash "config/binary_syslinux/splash.png" \
 	--syslinux-timeout "10" \
 	--syslinux-menu "true" \
