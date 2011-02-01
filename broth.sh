@@ -144,7 +144,7 @@ published by the Free Software Foundation, version 3 of the license.
 usage: $0 options
    -h      Show this message
    -o      Choose output (CD or DVD or CUSTOM)
-   -a      Choose target architecture (i386|amd64|lpia, default:i386)
+   -a      Choose target architecture (i386|amd64, default:i386)
    -p      Parent build directory (default:$PARENTBUILD_DIRECTORY)
 EOF
 }
