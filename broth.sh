@@ -24,7 +24,9 @@
 #
 
 
-# global variables
+## What are we cooking?
+#######################
+
 BUILDER=$(whoami)
 BROTH_DIRECTORY=$(pwd)
 PUREDYNE_LINUX="linux"
@@ -34,9 +36,13 @@ PUREDYNE_VERSION="1010"
 PARENTBUILD_DIRECTORY="/home/$BUILDER"
 BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 
-# live builder specific settings
-serverconf()
+
+## How you like them soups?
+###########################
+
+prepare_kitchen()
 {
+    # builder specific settings
     if [ $(cat /etc/hostname) == "builder" ]
     then
         echo "bob the builder mode"
@@ -50,9 +56,20 @@ serverconf()
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
     fi
+
+    # create or clean existing kitchen
+    if [ ! -d $BUILD_DIRECTORY ]
+    then
+        mkdir -p $BUILD_DIRECTORY
+	cd $BUILD_DIRECTORY
+    else
+        cd $BUILD_DIRECTORY
+        sudo lb clean 
+        rm -rf $BUILD_DIRECTORY/config
+    fi
 }
 
-brothconfig()
+choose_recipe()
 {
     lb config \
 	$BUILD_MIRRORS \
@@ -85,7 +102,7 @@ brothconfig()
 	--keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
 }
 
-stock()
+secret_ingredient()
 {
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
     rm -rf $BUILD_DIRECTORY/config/chroot_local-hooks
@@ -102,7 +119,7 @@ stock()
 
 }
 
-serve()
+serve_soup()
 {
     if [ -e $BUILD_DIRECTORY/binary.iso ]
     then
@@ -117,30 +134,22 @@ serve()
 
 make_soup()
 {
-    serverconf
-
-    # FIXME - move this out
-    if [ ! -d $BUILD_DIRECTORY ]
-    then
-        mkdir -p $BUILD_DIRECTORY
-	cd $BUILD_DIRECTORY
-    else
-        cd $BUILD_DIRECTORY
-        sudo lb clean 
-        rm -rf $BUILD_DIRECTORY/config
-    fi
-
-    brothconfig
-    stock
+    prepare_kitchen
+    choose_recipe
+    secret_ingredient
     sudo lb build  2>&1| tee broth.log
-    serve
+    serve_soup
 }
+
+
+## Au menu ce soir
+##################
 
 usage()
 {
 cat << EOF
 BROTH - The mother of all soups
-Copyright (C) 2008-2010  Puredyne Team
+Copyright (C) 2008-2011  Puredyne Team
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
 published by the Free Software Foundation, version 3 of the license.
@@ -152,6 +161,7 @@ usage: $0 options
    -p      Parent build directory (default:$PARENTBUILD_DIRECTORY)
 EOF
 }
+
 
 if [ "$1" == "" ]; then
     usage ; exit 1
@@ -189,6 +199,10 @@ else
 	esac
     done
 fi
+
+
+## Finally!
+###########
 
 make_soup
 
