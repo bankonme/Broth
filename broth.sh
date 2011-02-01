@@ -101,7 +101,7 @@ stock() {
 serve()
 {
     if [ -e $BUILD_DIRECTORY/binary.iso ]; then
-	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_ARCH}-dev"
+	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_MEDIUM}-${PUREDYNE_ARCH}-dev"
 	mv $BUILD_DIRECTORY/binary.iso $BUILD_DIRECTORY/${RELEASE}.iso
 	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
 	echo "soup is ready!"
@@ -152,8 +152,10 @@ else
 	case $OPTION in
 	    h)  usage ; exit 1;;
             o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
-		if [ $OPTARG == "CD" -o $OPTARG == "DVD" -o $OPTARG == "CUSTOM" ]; then
-                    PACKAGES_LISTS="puredyne-$OPTARG"
+		if [ $OPTARG == "CD" -o $OPTARG == "DVD" -o $OPTARG == "CUSTOM" ]
+		then
+		    PUREDYNE_MEDIUM="$OPTARG"
+                    PACKAGES_LISTS="puredyne-${PUREDYNE_MEDIUM}"
 		    echo "starting building of $PACKAGES_LISTS"
 		else
                     echo "profile unknown, kthxbye"; exit -1
