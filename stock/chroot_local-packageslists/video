@@ -33,7 +33,10 @@ frei0r-plugins-doc
 
 
 
-#processing
+processing
+processing-gsvideo
+processing-osc
+processing-controlp5
 
 libdvdcss2
 
