@@ -127,8 +127,8 @@ serve_soup()
 	mv $BUILD_DIRECTORY/binary.iso $BUILD_DIRECTORY/${RELEASE}.iso
 	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
 	echo "soup is ready!"
-	rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.md5
-	rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.iso
+#	rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.md5
+#	rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.iso
     fi
 }
 
