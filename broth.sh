@@ -43,7 +43,7 @@ BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 prepare_kitchen()
 {
     # builder specific settings
-    if [ ${BOB_THE_BUILDER} == 1 ]
+    if [ "${BOB_THE_BUILDER}" == "1" ]
     then
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
@@ -95,7 +95,7 @@ choose_recipe()
 	--architecture $PUREDYNE_ARCH \
 	--mode "ubuntu" \
 	--distribution "maverick" \
-	--initramfs "live-boot" \
+	--initramfs "live-initramfs" \
 	--apt "apt" \
 	--apt-recommends "false" \
 	--apt-options "--yes --force-yes" \
@@ -132,7 +132,7 @@ serve_soup()
 	mv $BUILD_DIRECTORY/binary-hybrid.iso $BUILD_DIRECTORY/${RELEASE}.iso
 	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
 	echo "soup is ready!"
-	if [ ${BOB_THE_BUILDER} == 1 ]
+	if [ "${BOB_THE_BUILDER}" == "1" ]
         then
 	    rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
 	    rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
