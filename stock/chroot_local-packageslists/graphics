@@ -13,4 +13,4 @@ imagemagick
 #fluxus
 
 # need Java so it's installed in the hook
-#puredyne-processing
+processing
