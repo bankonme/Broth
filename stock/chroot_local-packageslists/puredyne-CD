@@ -5,6 +5,7 @@
 #include <fonts>
 #include <graphics>
 #include <hardware>
+#include <liquorix>
 #include <medibuntu>
 #include <net>
 #include <streaming>
