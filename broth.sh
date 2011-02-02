@@ -43,14 +43,12 @@ BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 prepare_kitchen()
 {
     # builder specific settings
-    if [ $(cat /etc/hostname) == "builder" ]
+    if [ ${BOB_THE_BUILDER} == 1 ]
     then
-        echo "bob the builder mode"
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot-security \"http://security.ubuntu.com/ubuntu\""
     else
-        echo "remix/test mode"
         PUREDYNE_SOUP="${PUREDYNE_SOUP} remix"
         BUILD_MIRRORS="--mirror-bootstrap \"http://gb.archive.ubuntu.com/ubuntu\" \
         --mirror-chroot \"http://gb.archive.ubuntu.com/ubuntu\" \
@@ -134,8 +132,11 @@ serve_soup()
 	mv $BUILD_DIRECTORY/binary-hybrid.iso $BUILD_DIRECTORY/${RELEASE}.iso
 	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
 	echo "soup is ready!"
-	rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
-	rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
+	if [ ${BOB_THE_BUILDER} == 1 ]
+        then
+	    rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
+	    rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
+        fi
     fi
 }
 
@@ -154,7 +155,8 @@ published by the Free Software Foundation, version 3 of the license.
 
 usage: $0 options
    -h      Show this message
-   -o      Choose output (CD or DVD or CUSTOM)
+   -b      Bob the Builder mode
+   -o      Choose output (CD, DVD or "CUSTOM")
    -a      Choose target architecture (i386|amd64, default:i386)
    -p      Parent build directory (default:$PARENTBUILD_DIRECTORY)
 EOF
@@ -164,7 +166,7 @@ EOF
 if [ "$1" == "" ]; then
     usage ; exit 1
 else
-    while getopts "ho:a:p:t:" OPTION ; do
+    while getopts "ho:a:p:tb" OPTION ; do
 	case $OPTION in
 	    h)  usage ; exit 1;;
             o)  OPTARG=`echo $OPTARG | tr '[:lower:]' '[:upper:]'`
@@ -193,6 +195,9 @@ else
 		echo "enabling tmpfs, hit CTRL-C if you do not know what you're doing"
 		sleep 5s
 		;;
+            b)  BOB_THE_BUILDER=1
+                echo "BOB THE BUILDER MODE!"
+                ;;
 	    *) echo "Not recognized argument, kthxbye"; exit -1 ;;
 	esac
     done
