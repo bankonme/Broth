@@ -64,7 +64,7 @@ prepare_kitchen()
 	cd $BUILD_DIRECTORY
     else
         cd $BUILD_DIRECTORY
-        sudo lb clean 
+        sudo lb clean
         rm -rf $BUILD_DIRECTORY/config
     fi
 }
@@ -84,10 +84,12 @@ choose_recipe()
 	--iso-preparer "live-build VERSION" \
 	--iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
 	--iso-volume "Puredyne ${PUREDYNE_SOUP}" \
+	--binary-images "iso-hybrid" \
 	--syslinux-splash "config/binary_syslinux/splash.png" \
 	--syslinux-timeout "10" \
 	--syslinux-menu "true" \
 	--username "lintian" \
+	--interactive "/bin/sh" \
 	--language "en_US.UTF-8" \
 	--linux-packages $PUREDYNE_LINUX \
 	--linux-flavours "generic" \
@@ -119,26 +121,22 @@ secret_ingredient()
 
 }
 
-serve_soup()
-{
-    if [ -e $BUILD_DIRECTORY/binary.iso ]
-    then
-	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_MEDIUM}-${PUREDYNE_ARCH}-dev"
-	mv $BUILD_DIRECTORY/binary.iso $BUILD_DIRECTORY/${RELEASE}.iso
-	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
-	echo "soup is ready!"
-	rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.md5
-	rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/${RELEASE}.iso
-    fi
-}
-
 make_soup()
 {
-    prepare_kitchen
-    choose_recipe
-    secret_ingredient
     sudo lb build  2>&1| tee broth.log
-    serve_soup
+}
+
+serve_soup()
+{
+    if [ -e $BUILD_DIRECTORY/binary-hybrid.iso ]
+    then
+	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_MEDIUM}-${PUREDYNE_ARCH}-dev"
+	mv $BUILD_DIRECTORY/binary-hybrid.iso $BUILD_DIRECTORY/${RELEASE}.iso
+	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
+	echo "soup is ready!"
+	rsync -P $BUILD_DIRECTORY/${RELEASE}.md5 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
+	rsync -P $BUILD_DIRECTORY/${RELEASE}.iso 10.80.80.40::puredyne-iso/${PUREDYNE_SOUP}/
+    fi
 }
 
 
@@ -204,5 +202,9 @@ fi
 ## Finally!
 ###########
 
+prepare_kitchen
+choose_recipe
+secret_ingredient
 make_soup
+serve_soup
 
