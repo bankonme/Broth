@@ -127,8 +127,11 @@ secret_ingredient()
     fi
 
     ## TEMP FIX SEE #504528 ----------------
-    ## COMES FROM LH 1.X SHOULD BE FIXED NOW
-    mv $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS.list
+    ## COMES FROM LH 1.X
+    PACKAGES_LISTS_DIR="$BUILD_DIRECTORY/config/chroot_local-packageslists"
+    mv $PACKAGES_LISTS_DIR/$PACKAGES_LISTS $PACKAGES_LISTS_DIR/$PACKAGES_LISTS.list
+    cat $PACKAGES_LISTS_DIR/$PACKAGES_LISTS-$PUREDYNE_ARCH >> $PACKAGES_LISTS_DIR/$PACKAGES_LISTS.list 
+
     ## -------------------------------------
 
 }
