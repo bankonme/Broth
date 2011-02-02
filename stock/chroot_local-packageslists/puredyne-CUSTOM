@@ -1,9 +1,4 @@
-#include <audio>
-#include <desktop>
-#include <dev>
-#include <firmware>
-#include <hardware>
-#include <medibuntu>
+#include <liquorix
 #include <net>
 #include <system>
 #include <wm>

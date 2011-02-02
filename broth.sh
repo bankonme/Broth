@@ -29,7 +29,7 @@
 
 BUILDER=$(whoami)
 BROTH_DIRECTORY=$(pwd)
-PUREDYNE_LINUX="linux"
+PUREDYNE_LINUX="linux-image"
 PUREDYNE_ARCH="i386"
 PUREDYNE_SOUP="gazpacho"
 PUREDYNE_VERSION="1010"
@@ -90,7 +90,7 @@ choose_recipe()
 	--interactive "/bin/sh" \
 	--language "en_US.UTF-8" \
 	--linux-packages $PUREDYNE_LINUX \
-	--linux-flavours "generic" \
+	--linux-flavours "2.6-liquorix-686" \
 	--archive-areas "main restricted universe multiverse" \
 	--architecture $PUREDYNE_ARCH \
 	--mode "ubuntu" \
@@ -99,7 +99,7 @@ choose_recipe()
 	--apt "apt" \
 	--apt-recommends "false" \
 	--apt-options "--yes --force-yes" \
-	--keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring"
+	--keyring-packages "ubuntu-keyring medibuntu-keyring puredyne-keyring liquorix-keyrings liquorix-keyring liquorix-archive-keyring"
 }
 
 secret_ingredient()
