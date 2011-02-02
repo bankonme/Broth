@@ -9,5 +9,6 @@
 #include <net>
 #include <streaming>
 #include <system>
+#include <text>
 #include <video>
 #include <wm>
