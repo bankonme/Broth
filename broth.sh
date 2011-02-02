@@ -42,6 +42,15 @@ BUILD_DIRECTORY="$PARENTBUILD_DIRECTORY/puredyne-build-$PUREDYNE_ARCH"
 
 prepare_kitchen()
 {
+    # Kernel specific settings
+    if [ "${PUREDYNE_ARCH}" == "i386" ]
+    then
+        PUREDYNE_LINUX_FLAVOUR="2.6-liquorix-686"
+    elif [ "${PUREDYNE_ARCH}" == "amd64" ]
+    then
+        PUREDYNE_LINUX_FLAVOUR="2.6-liquorix-amd64"
+    fi
+
     # builder specific settings
     if [ "${BOB_THE_BUILDER}" == "1" ]
     then
@@ -90,7 +99,7 @@ choose_recipe()
 	--interactive "/bin/sh" \
 	--language "en_US.UTF-8" \
 	--linux-packages $PUREDYNE_LINUX \
-	--linux-flavours "2.6-liquorix-686" \
+	--linux-flavours $PUREDYNE_LINUX_FLAVOUR \
 	--archive-areas "main restricted universe multiverse" \
 	--architecture $PUREDYNE_ARCH \
 	--mode "ubuntu" \
@@ -112,6 +121,11 @@ secret_ingredient()
         cp $BUILD_DIRECTORY/config/chroot_local-hooks-$PACKAGES_LISTS/* $BUILD_DIRECTORY/config/chroot_local-hooks/
     fi
     
+    if [ -d $BUILD_DIRECTORY/config/chroot_local-hooks-$PUREDYNE_ARCH ]
+    then
+        cp $BUILD_DIRECTORY/config/chroot_local-hooks-$PUREDYNE_ARCH/* $BUILD_DIRECTORY/config/chroot_local-hooks/
+    fi
+
     ## TEMP FIX SEE #504528 ----------------
     ## COMES FROM LH 1.X SHOULD BE FIXED NOW
     mv $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS $BUILD_DIRECTORY/config/chroot_local-packageslists/$PACKAGES_LISTS.list
