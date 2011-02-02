@@ -113,27 +113,31 @@ choose_recipe()
 
 secret_ingredient()
 {
+    # copy the modified config over vanilla config
     cp -r $BROTH_DIRECTORY/stock/* $BUILD_DIRECTORY/config/
-    rm -rf $BUILD_DIRECTORY/config/chroot_local-hooks
-    mv $BUILD_DIRECTORY/config/chroot_local-hooks-common $BUILD_DIRECTORY/config/chroot_local-hooks
-    if [ -d $BUILD_DIRECTORY/config/chroot_local-hooks-$PACKAGES_LISTS ]
+
+    # move common hooks
+    HOOKS_ROOT="$BUILD_DIRECTORY/config/chroot_local-hooks"
+    rm -rf $HOOKS_ROOT
+    mv $HOOKS_ROOT-common $HOOKS_ROOT
+
+    # copy target specific hooks
+    if [ -d $HOOKS_ROOT-$PACKAGES_LISTS ]
     then
-        cp $BUILD_DIRECTORY/config/chroot_local-hooks-$PACKAGES_LISTS/* $BUILD_DIRECTORY/config/chroot_local-hooks/
+        cp $HOOKS_ROOT-hooks-$PACKAGES_LISTS/* $HOOKS_ROOT
     fi
     
-    if [ -d $BUILD_DIRECTORY/config/chroot_local-hooks-$PUREDYNE_ARCH ]
+    # copy architecture specific hooks
+    if [ -d $HOOKS_ROOT-$PUREDYNE_ARCH ]
     then
-        cp $BUILD_DIRECTORY/config/chroot_local-hooks-$PUREDYNE_ARCH/* $BUILD_DIRECTORY/config/chroot_local-hooks/
+        cp $HOOKS_ROOT-$PUREDYNE_ARCH/* $HOOKS_ROOT
     fi
 
-    ## TEMP FIX SEE #504528 ----------------
-    ## COMES FROM LH 1.X
+    # choose the "master" package list
     PACKAGES_LISTS_DIR="$BUILD_DIRECTORY/config/chroot_local-packageslists"
     mv $PACKAGES_LISTS_DIR/$PACKAGES_LISTS $PACKAGES_LISTS_DIR/$PACKAGES_LISTS.list
+    # append architecture specific packages
     cat $PACKAGES_LISTS_DIR/$PACKAGES_LISTS-$PUREDYNE_ARCH >> $PACKAGES_LISTS_DIR/$PACKAGES_LISTS.list 
-
-    ## -------------------------------------
-
 }
 
 make_soup()
