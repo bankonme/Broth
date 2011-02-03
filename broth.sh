@@ -91,7 +91,7 @@ choose_recipe()
 	--iso-preparer "live-build VERSION" \
 	--iso-publisher "Puredyne team; http://puredyne.org; puredyne-team@goto10.org" \
 	--iso-volume "Puredyne ${PUREDYNE_SOUP}" \
-	--binary-images "iso-hybrid" \
+	--binary-images "iso" \
 	--syslinux-splash "config/binary_syslinux/splash.png" \
 	--syslinux-timeout "10" \
 	--syslinux-menu "true" \
@@ -146,10 +146,10 @@ make_soup()
 
 serve_soup()
 {
-    if [ -e $BUILD_DIRECTORY/binary-hybrid.iso ]
+    if [ -e $BUILD_DIRECTORY/binary.iso ]
     then
 	RELEASE="puredyne-1010-gazpacho-${PUREDYNE_MEDIUM}-${PUREDYNE_ARCH}-dev"
-	mv $BUILD_DIRECTORY/binary-hybrid.iso $BUILD_DIRECTORY/${RELEASE}.iso
+	mv $BUILD_DIRECTORY/binary.iso $BUILD_DIRECTORY/${RELEASE}.iso
 	md5sum -b $BUILD_DIRECTORY/${RELEASE}.iso > ${RELEASE}.md5
 	echo "soup is ready!"
 	if [ "${BOB_THE_BUILDER}" == "1" ]
