@@ -96,7 +96,6 @@ choose_recipe()
 	--syslinux-timeout "10" \
 	--syslinux-menu "true" \
 	--username "lintian" \
-	--interactive "/bin/sh" \
 	--language "en_US.UTF-8" \
 	--linux-packages $PUREDYNE_LINUX \
 	--linux-flavours $PUREDYNE_LINUX_FLAVOUR \
