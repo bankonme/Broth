@@ -123,7 +123,7 @@ secret_ingredient()
     # copy target specific hooks
     if [ -d $HOOKS_ROOT-$PACKAGES_LISTS ]
     then
-        cp $HOOKS_ROOT-hooks-$PACKAGES_LISTS/* $HOOKS_ROOT
+        cp $HOOKS_ROOT-$PACKAGES_LISTS/* $HOOKS_ROOT
     fi
     
     # copy architecture specific hooks
