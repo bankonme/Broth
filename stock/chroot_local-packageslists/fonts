@@ -6,3 +6,7 @@ x-ttcidfont-conf
 # for PiDiP
 ttf-bitstream-vera 
 xfonts-proggy
+
+# Font for openJDK processing
+
+ttf-dejavu-core
