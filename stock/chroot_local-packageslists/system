@@ -26,6 +26,7 @@ screen
 less
 
 powertop
+latencytop
 
 # filesystem and disks
 reiserfsprogs
