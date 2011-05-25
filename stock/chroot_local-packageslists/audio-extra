@@ -16,6 +16,8 @@ hydrogen-drumkits
 # MIDI
 timidity
 rosegarden
+fluidsynth
+qsynth
 
 # Trackers
 schism
