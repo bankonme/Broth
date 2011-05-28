@@ -1,11 +1,10 @@
 menuentry "Puredyne" {
          recordfail=1
          if [ -n ${have_grubenv} ]; then save_env recordfail; fi
-     set quiet=1
      insmod ext2
      set root=(hd0,2)
      search --no-floppy --fs-uuid --set 3f59651f-639f-4465-9c1c-86c49e427249
-     linux /live/vmlinuz1 ramdisk_size=1000000 boot=live persistent username=lintian hostname=puredyne
-     initrd /live/initrd1.img
+     linux /live/vmlinuz ramdisk_size=1000000 boot=live persistent username=lintian hostname=puredyne
+     initrd /live/initrd.img
 }
 
