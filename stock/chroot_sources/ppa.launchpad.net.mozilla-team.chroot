@@ -1,0 +1,3 @@
+# Latest FF plz
+deb http://ppa.launchpad.net/mozillateam/firefox-stable/ubuntu  maverick main 
+deb-src http://ppa.launchpad.net/mozillateam/firefox-stable/ubuntu  maverick main
