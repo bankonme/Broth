@@ -179,6 +179,9 @@ usage: $0 options
    -o      Choose output (CD, DVD or "CUSTOM")
    -a      Choose target architecture (i386|amd64, default:i386)
    -p      Parent build directory (default:$PARENTBUILD_DIRECTORY)
+
+Please check http://en.wikibooks.org/wiki/Puredyne/How_to_broth
+
 EOF
 }
 

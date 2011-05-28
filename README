@@ -1,17 +1,23 @@
-Broth
------
+   #   o
+    #          o              o
+   #          O
+   #                   m   #     
+    #mmm  m mm   mmm  mm#mm # mm  
+    #" "# #"  " #" "#   #   #"  # 
+   #   # #     #   #   #   #   # 
+   ##m#" #     "#m#"   "mm #   # 
 
-This is broth, the mother of all soups.
+     The mother of all soups.
 
-A simple high-level script used to generate Ubuntu based live distros
-using the Debian-Live framework.
+   ?: A simple high-level script 
+   used to generate Ubuntu based
+   live distros using the Debian
+   Live framework.
 
-Broth is at the moment focussing on producing Puredyne live images but
-it can be used for virtually any other live systems.
+   Broth is at the moment focussed 
+   on producing Puredyne live 
+   images but it can be used for 
+   virtually any other live systems.
 
+   Doc: ./broth -h
 
-Documentation
--------------
-
-FIXME
-Currently migrating broth to Debian Live suite 2.x
