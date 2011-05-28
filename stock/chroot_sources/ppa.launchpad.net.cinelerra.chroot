@@ -1,0 +1,3 @@
+# racket PPA
+deb http://ppa.launchpad.net/cinelerra-ppa/ppa/ubuntu  maverick main 
+deb-src http://ppa.launchpad.net/cinelerra-ppa/ppa/ubuntu  maverick main

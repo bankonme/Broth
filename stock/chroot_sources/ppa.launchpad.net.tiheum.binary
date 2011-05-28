@@ -1,0 +1,3 @@
+# Tiheum's PPA for faenza icons
+deb http://ppa.launchpad.net/tiheum/equinox/ubuntu  maverick main 
+deb-src http://ppa.launchpad.net/tiheum/equinox/ubuntu  maverick main

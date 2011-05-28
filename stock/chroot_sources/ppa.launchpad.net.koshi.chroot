@@ -1,0 +1,3 @@
+# koshi's XFCE PPA PPA
+deb http://ppa.launchpad.net/koshi/xfce-4.8/ubuntu maverick main 
+deb-src http://ppa.launchpad.net/koshi/xfce-4.8/ubuntu  maverick main
