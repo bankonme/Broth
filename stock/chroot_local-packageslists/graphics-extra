@@ -13,6 +13,10 @@ ufraw
 rawstudio
 dcraw
 gimp-ufraw
+gthumb
+gphoto2
+gpicview
+shotwell
 
 # Viz
 graphviz
